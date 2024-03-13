@@ -1,0 +1,32 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "57dfb1b5-7d79-4046-a4da-fd831d5befe1-KeyId": "KeyId",
+      "CLIENT_ID": "CLIENT_ID",
+      "EMPLOYEE_ID": "EMPLOYEE_ID",
+      "FIRST_NAME": "FIRST_NAME",
+      "IS_DELETED": "IS_DELETED",
+      "IS_LOCKED": "IS_LOCKED",
+      "IS_LOGIN": "IS_LOGIN",
+      "LAST_NAME": "LAST_NAME",
+      "MIDDLE_NAME": "MIDDLE_NAME",
+      "QNXTID": "QNXTID",
+      "QUEUE_ID": "QUEUE_ID",
+      "SHIFTID": "SHIFTID",
+      "USER_ID": "USER_ID",
+      "USERTYPE_ID": "USERTYPE_ID"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "vw_USER_MASTER_HOMEPAGE",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

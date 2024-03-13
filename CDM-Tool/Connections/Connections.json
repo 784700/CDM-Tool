@@ -1,0 +1,302 @@
+{
+  "295a5f49-e06d-407f-9b2a-2b547dcd36ed": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel",
+      "iconUri": "https://connectoricons-prod.azureedge.net/master/1.0.1678.3629/excel/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excel",
+      "parameterHints": {
+        "9b3fb76a-adae-44c3-82c9-b7220370bada": {
+          "value": "fileSource"
+        }
+      },
+      "parameterHintsV2": {
+        "fileSource": {
+          "value": "9b3fb76a-adae-44c3-82c9-b7220370bada"
+        }
+      }
+    },
+    "datasets": {
+      "b!FZ7Sq-5FrU65apTmI9NfBRa18T5LfFBEmibXRnFIPfY41oehmZZlTb4LngpBoPCh.01TO4IBB7KY2WEMPRDBZEKIWOXNS4237I5": {
+        "dataSources": {
+          "Table1": {
+            "tableName": "Table1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Table1"
+    ],
+    "dependencies": {
+      "fileSource": "9b3fb76a-adae-44c3-82c9-b7220370bada"
+    },
+    "dependents": [],
+    "id": "295a5f49-e06d-407f-9b2a-2b547dcd36ed"
+  },
+  "3509e30b-1cc1-4dc1-b87c-7012b09e0195": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Premium",
+      "authenticationType": "sqlAuthentication",
+      "displayName": "SQL Server",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_sql",
+        "appVer": "3.24031.20",
+        "modifiedOn": "2024-03-13 08:21:33",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "gatewayObjectIdHint": "5a8e448b-a306-453b-8bc6-3145b51036e3",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/sql/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sql",
+      "isOnPremiseConnection": true,
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_sql/connections/0bb7a76e6e2446b48079ff96c501f4b5"
+    },
+    "datasets": {
+      "LTIN399896%5cSQLEXPRESS,CDM_INT": {
+        "dataSources": {
+          "CDM_ATTACHMENT_COMMENTS": {
+            "tableName": "[dbo].[CDM_ATTACHMENT_COMMENTS]"
+          },
+          "CDM_BAKUP_DETAIL": {
+            "tableName": "[dbo].[CDM_BAKUP_DETAIL]"
+          },
+          "CDM_BATCH_ROOT_PATH_DETAILS": {
+            "tableName": "[dbo].[CDM_BATCH_ROOT_PATH_DETAILS]"
+          },
+          "CDM_CLAIM_DETAIL_TSN": {
+            "tableName": "[dbo].[CDM_CLAIM_DETAIL_TSN]"
+          },
+          "CDM_CLAIM_STATUS": {
+            "tableName": "[dbo].[CDM_CLAIM_STATUS]"
+          },
+          "CDM_CLIENT_MASTER": {
+            "tableName": "[dbo].[CDM_CLIENT_MASTER]"
+          },
+          "CDM_DAY_DURATION": {
+            "tableName": "[dbo].[CDM_DAY_DURATION]"
+          },
+          "CDM_EMAIL_MASTER": {
+            "tableName": "[dbo].[CDM_EMAIL_MASTER]"
+          },
+          "CDM_ERROR_LOG": {
+            "tableName": "[dbo].[CDM_ERROR_LOG]"
+          },
+          "CDM_FIELD_MASTER": {
+            "tableName": "[dbo].[CDM_FIELD_MASTER]"
+          },
+          "CDM_FILE_DELETE_DETAIL_MASTER": {
+            "tableName": "[dbo].[CDM_FILE_DELETE_DETAIL_MASTER]"
+          },
+          "CDM_FILE_DETAIL_TSN": {
+            "tableName": "[dbo].[CDM_FILE_DETAIL_TSN]"
+          },
+          "CDM_FILE_TYPE_MASTER": {
+            "tableName": "[dbo].[CDM_FILE_TYPE_MASTER]"
+          },
+          "CDM_LOGIN_TSN_HISTORY": {
+            "tableName": "[dbo].[CDM_LOGIN_TSN_HISTORY]"
+          },
+          "CDM_MASTER_DATA_TSN": {
+            "tableName": "[dbo].[CDM_MASTER_DATA_TSN]"
+          },
+          "CDM_MIS_REPORT_USER": {
+            "tableName": "[dbo].[CDM_MIS_REPORT_USER]"
+          },
+          "CDM_MODULE_MASTER": {
+            "tableName": "[dbo].[CDM_MODULE_MASTER]"
+          },
+          "CDM_PEND_COMMENTS": {
+            "tableName": "[dbo].[CDM_PEND_COMMENTS]"
+          },
+          "CDM_PROCESS_MASTER": {
+            "tableName": "[dbo].[CDM_PROCESS_MASTER]"
+          },
+          "CDM_PROCESS_USER_MAPPING": {
+            "tableName": "[dbo].[CDM_PROCESS_USER_MAPPING]"
+          },
+          "CDM_QUEUE_MAPPING": {
+            "tableName": "[dbo].[CDM_QUEUE_MAPPING]"
+          },
+          "CDM_QUEUE_MASTER": {
+            "tableName": "[dbo].[CDM_QUEUE_MASTER]"
+          },
+          "CDM_REPORT_TYPE": {
+            "tableName": "[dbo].[CDM_REPORT_TYPE]"
+          },
+          "CDM_ROUTED_CLAIMS_HISTORY": {
+            "tableName": "[dbo].[CDM_ROUTED_CLAIMS_HISTORY]"
+          },
+          "CDM_RULE_MASTER": {
+            "tableName": "[dbo].[CDM_RULE_MASTER]"
+          },
+          "CDM_SECURITY_QUESTION": {
+            "tableName": "[dbo].[CDM_SECURITY_QUESTION]"
+          },
+          "CDM_SHIFT_TYPE_MASTER": {
+            "tableName": "[dbo].[CDM_SHIFT_TYPE_MASTER]"
+          },
+          "CDM_SUBMODULE_MASTER": {
+            "tableName": "[dbo].[CDM_SUBMODULE_MASTER]"
+          },
+          "CDM_USER_BREAK_REASON": {
+            "tableName": "[dbo].[CDM_USER_BREAK_REASON]"
+          },
+          "CDM_USER_BREAK_TSN_HISTORY": {
+            "tableName": "[dbo].[CDM_USER_BREAK_TSN_HISTORY]"
+          },
+          "CDM_USER_CLIENT_MAPPING": {
+            "tableName": "[dbo].[CDM_USER_CLIENT_MAPPING]"
+          },
+          "CDM_USER_PRODUCTIVITY_DETAILS": {
+            "tableName": "[dbo].[CDM_USER_PRODUCTIVITY_DETAILS]"
+          },
+          "CDM_USER_REG_MASTER": {
+            "tableName": "[dbo].[CDM_USER_REG_MASTER]"
+          },
+          "CDM_USER_SHIFT_MAPPING_TSN": {
+            "tableName": "[dbo].[CDM_USER_SHIFT_MAPPING_TSN]"
+          },
+          "CDM_USER_TYPE_MASTER": {
+            "tableName": "[dbo].[CDM_USER_TYPE_MASTER]"
+          },
+          "CDM_WORKFLOW_MASTER": {
+            "tableName": "[dbo].[CDM_WORKFLOW_MASTER]"
+          },
+          "CDM_WORKFLOW_TSN": {
+            "tableName": "[dbo].[CDM_WORKFLOW_TSN]"
+          },
+          "STATE_DETAILS": {
+            "tableName": "[dbo].[STATE_DETAILS]"
+          },
+          "test": {
+            "tableName": "[dbo].[test]"
+          },
+          "testdb": {
+            "tableName": "[dbo].[testdb]"
+          },
+          "Transfer_Table_Procedures": {
+            "tableName": "[dbo].[Transfer_Table_Procedures]"
+          },
+          "VW_CDM_CLAIM_DETAIL_TSN": {
+            "tableName": "[dbo].[VW_CDM_CLAIM_DETAIL_TSN]"
+          },
+          "vw_CDM_CLAIM_DETAIL_TSN_REPORT": {
+            "tableName": "[dbo].[vw_CDM_CLAIM_DETAIL_TSN_REPORT]"
+          },
+          "vw_CDM_CLAIM_DETAIL_TSN_REPORT_VOL": {
+            "tableName": "[dbo].[vw_CDM_CLAIM_DETAIL_TSN_REPORT_VOL]"
+          },
+          "vw_CDM_FILE_UPLOAD_MASTER": {
+            "tableName": "[dbo].[vw_CDM_FILE_UPLOAD_MASTER]"
+          },
+          "VW_CDM_LogTime": {
+            "tableName": "[dbo].[VW_CDM_LogTime]"
+          },
+          "vw_CDM_QUEUE_MASTER": {
+            "tableName": "[dbo].[vw_CDM_QUEUE_MASTER]"
+          },
+          "vw_CLAIM_STATUS": {
+            "tableName": "[dbo].[vw_CLAIM_STATUS]"
+          },
+          "vw_ICARE_MASTER_DATA_TSN_HOMEPAGE": {
+            "tableName": "[dbo].[vw_ICARE_MASTER_DATA_TSN_HOMEPAGE]"
+          },
+          "vw_PEND_COMMENTS": {
+            "tableName": "[dbo].[vw_PEND_COMMENTS]"
+          },
+          "vw_USER_MASTER_HOMEPAGE": {
+            "tableName": "[dbo].[vw_USER_MASTER_HOMEPAGE]"
+          },
+          "vw_USER_PRODUCTIVITY_DETAILS": {
+            "tableName": "[dbo].[vw_USER_PRODUCTIVITY_DETAILS]"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "CDM_ATTACHMENT_COMMENTS",
+      "CDM_BAKUP_DETAIL",
+      "CDM_BATCH_ROOT_PATH_DETAILS",
+      "CDM_CLAIM_DETAIL_TSN",
+      "CDM_CLAIM_STATUS",
+      "vw_USER_PRODUCTIVITY_DETAILS",
+      "vw_USER_MASTER_HOMEPAGE",
+      "vw_PEND_COMMENTS",
+      "vw_ICARE_MASTER_DATA_TSN_HOMEPAGE",
+      "vw_CLAIM_STATUS",
+      "vw_CDM_QUEUE_MASTER",
+      "VW_CDM_LogTime",
+      "vw_CDM_FILE_UPLOAD_MASTER",
+      "vw_CDM_CLAIM_DETAIL_TSN_REPORT_VOL",
+      "vw_CDM_CLAIM_DETAIL_TSN_REPORT",
+      "VW_CDM_CLAIM_DETAIL_TSN",
+      "Transfer_Table_Procedures",
+      "STATE_DETAILS",
+      "CDM_WORKFLOW_TSN",
+      "CDM_CLIENT_MASTER",
+      "CDM_DAY_DURATION",
+      "CDM_EMAIL_MASTER",
+      "CDM_ERROR_LOG",
+      "CDM_FIELD_MASTER",
+      "CDM_FILE_DELETE_DETAIL_MASTER",
+      "CDM_FILE_DETAIL_TSN",
+      "CDM_FILE_TYPE_MASTER",
+      "CDM_LOGIN_TSN_HISTORY",
+      "CDM_MASTER_DATA_TSN",
+      "CDM_MIS_REPORT_USER",
+      "CDM_MODULE_MASTER",
+      "CDM_PEND_COMMENTS",
+      "CDM_PROCESS_MASTER",
+      "CDM_PROCESS_USER_MAPPING",
+      "CDM_QUEUE_MAPPING",
+      "CDM_QUEUE_MASTER",
+      "CDM_REPORT_TYPE",
+      "CDM_ROUTED_CLAIMS_HISTORY",
+      "CDM_RULE_MASTER",
+      "CDM_SECURITY_QUESTION",
+      "CDM_SHIFT_TYPE_MASTER",
+      "CDM_SUBMODULE_MASTER",
+      "CDM_USER_BREAK_REASON",
+      "CDM_USER_BREAK_TSN_HISTORY",
+      "CDM_USER_CLIENT_MAPPING",
+      "CDM_USER_PRODUCTIVITY_DETAILS",
+      "CDM_USER_REG_MASTER",
+      "CDM_USER_SHIFT_MAPPING_TSN",
+      "CDM_USER_TYPE_MASTER",
+      "CDM_WORKFLOW_MASTER",
+      "test",
+      "testdb"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "endpoints": [
+      "LTIN399896%5cSQLEXPRESS,CDM_INT"
+    ],
+    "id": "3509e30b-1cc1-4dc1-b87c-7012b09e0195"
+  },
+  "9b3fb76a-adae-44c3-82c9-b7220370bada": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1669/1.0.1669.3522/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "295a5f49-e06d-407f-9b2a-2b547dcd36ed"
+    ],
+    "id": "9b3fb76a-adae-44c3-82c9-b7220370bada"
+  }
+}

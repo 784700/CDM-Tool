@@ -1,0 +1,25 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr20d_table_forms",
+      "Namespace": "User Details (Forms)",
+      "Values": {
+        "Information": "bfcba9d7-a011-41e0-abc3-836a3201669d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr20d_newtable_forms",
+      "Namespace": "User Registrations (Forms)",
+      "Values": {
+        "Information": "5c980719-0116-4143-9a16-da8de73e5d4d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr20d_cdm_claimmanagement_dk_forms",
+      "Namespace": "CDM_ClaimManagement_DKS (Forms)",
+      "Values": {
+        "Information": "dffe674e-69db-4380-8c8f-b5029ffe70dc"
+      }
+    }
+  ]
+}

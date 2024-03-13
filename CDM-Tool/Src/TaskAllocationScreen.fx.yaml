@@ -1,0 +1,1275 @@
+TaskAllocationScreen As screen:
+
+    LogoContainer_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        Y: =40
+        ZIndex: =1
+
+        Label1_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =20.75
+            Text: ="Emblem Health"
+            Visible: =false
+            Width: =348.50
+            X: =0.00
+            ZIndex: =2
+
+        Image2_1 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =1436
+            X: =0.00
+            ZIndex: =3
+
+    HomeTABS_Container_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.ExtraBold
+        Fill: =RGBA(77, 77, 77, 1)
+        Height: =55
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =Parent.Width
+        Y: =120
+        ZIndex: =2
+
+        HomeButton_1 As button:
+            Fill: =HomeTABS_Container_1.Fill
+            Font: =Font.'Lato Light'
+            Height: =53
+            OnSelect: =Navigate(MainScreen);Set(visibleTaskAllocationContainer,false);Set(visibleReports,false);Set(visibleUsermanagementContainer,false)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =12.44
+            Text: ="Home"
+            Width: =88.79
+            X: =69
+            ZIndex: =1
+
+        UserManagementButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =55
+            OnSelect: =Set(visibleTaskAllocationContainer,false);Set(visibleReports,false);If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="User Management"
+            Width: =146.87
+            X: =232
+            ZIndex: =2
+
+        UserManagementDownICON_1 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =355
+            ZIndex: =3
+
+        TaskAllocationButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =55
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleReports,false);If(visibleTaskAllocationContainer,Set(visibleTaskAllocationContainer,false),Set(visibleTaskAllocationContainer,true));
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Task Allocation"
+            Width: =134.42
+            X: =413
+            ZIndex: =4
+
+        RuleBuilderButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =55
+            OnSelect: =If(visibleRulebuilder,Set(visibleRulebuilder,false),Set(visibleRulebuilder,true))
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Rule Builder"
+            Width: =110.36
+            X: =582
+            ZIndex: =5
+
+        UploadInventoryButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =55
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Upload Inventory"
+            Width: =153.51
+            X: =723
+            ZIndex: =6
+
+        AdminToolButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =55
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Admin Tool"
+            Width: =125.30
+            X: =892
+            ZIndex: =7
+
+        ReportButton_1 As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container_1.Fill
+            Height: =53
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleTaskAllocationContainer,false);If(visibleReports,Set(visibleReports,false),Set(visibleReports,true));
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Report"
+            Width: =106
+            X: =1055
+            ZIndex: =8
+
+        TaskAllocationDownICON_3 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleReports,false);If(visibleTaskAllocationContainer,Set(visibleTaskAllocationContainer,false),Set(visibleTaskAllocationContainer,true));
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =529
+            ZIndex: =9
+
+        RuleBuilderDownICON_4 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =""
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =673
+            ZIndex: =10
+
+        UploadInventoryDownICON_5 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =843
+            ZIndex: =11
+
+        AdminToolDownICON_6 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =979
+            ZIndex: =12
+
+        ReportDownICON_7 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleTaskAllocationContainer,false);If(visibleReports,Set(visibleReports,false),Set(visibleReports,true));
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =1124
+            ZIndex: =13
+
+    UserLoginInfoContainer_1 As groupContainer.manualLayoutContainer:
+        Height: =45
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        Y: =175
+        ZIndex: =3
+
+        UserNameLabel_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(102, 182, 227, 1)
+            Height: =45
+            OnSelect: =If(VisibleUserLogoutContainer,Set(VisibleUserLogoutContainer,false),Set(VisibleUserLogoutContainer,true))
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Welcome : Hussain"
+            Width: =214.08
+            X: =0.00
+            ZIndex: =2
+
+        ProjectType_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 13, 75, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            Live: =Live.Assertive
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =16.59
+            Text: =""
+            Width: =797.41
+            X: =175.91
+            ZIndex: =3
+
+        Timer1_1 As timer:
+            AutoStart: =true
+            Duration: =1000
+            OnTimerEnd: =Set(TimeinSec,Now())
+            OnTimerStart: =Set(TimeinSec,Now())
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Repeat: =true
+            Size: =10.79
+            Visible: =false
+            Width: =132.77
+            X: =33.19
+            Y: =5
+            ZIndex: =4
+
+        LogoutButton_1 As button:
+            OnSelect: =/*Navigate(LoginScreen);*/Set(VisibleUserLogoutContainer,false);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =12.44
+            Text: ="Logout"
+            Width: =132.77
+            X: =1234
+            ZIndex: =6
+
+    WholeContainer As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Height: =728
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        Y: =172
+        ZIndex: =4
+
+        Container2 As groupContainer.manualLayoutContainer:
+            BorderStyle: =BorderStyle.Dotted
+            BorderThickness: =2
+            Height: =62
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =1366
+            X: =0.00
+            Y: =20
+            ZIndex: =1
+
+            Client As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =47
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =12.44
+                Text: |-
+                    ="Project : "
+                Width: =192.51
+                X: =33.19
+                Y: =12
+                ZIndex: =1
+
+            "'Shift Timing' As label":
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =47
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =12.44
+                Text: |-
+                    ="Shift Timing : "
+                Width: =192.51
+                X: =371.74
+                Y: =12
+                ZIndex: =2
+
+            "'User Availability' As label":
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =47
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =12.44
+                Text: |-
+                    ="User Availability : "
+                Width: =192.51
+                X: =761.72
+                Y: =12
+                ZIndex: =3
+
+        ClientCont As groupContainer.manualLayoutContainer:
+            BorderThickness: =2
+            Height: =32
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Width: =203.29
+            X: =119.49
+            Y: =32
+            ZIndex: =2
+
+            Dropdown1 As dropdown:
+                Height: =Parent.Height
+                Items: =col_ClientName
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =10.79
+                Width: =203.29
+                X: =0.00
+                ZIndex: =1
+
+        ShiftTiming As groupContainer.manualLayoutContainer:
+            BorderThickness: =2
+            Height: =32
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Width: =203.29
+            X: =508.64
+            Y: =32
+            ZIndex: =3
+
+            ShiftTimingDropDown As dropdown:
+                Height: =Parent.Height
+                Items: =col_ShiftTimings
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =10.79
+                Width: =203.29
+                X: =0.00
+                ZIndex: =1
+
+        UserAvailability As groupContainer.manualLayoutContainer:
+            BorderThickness: =2
+            Height: =32
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Width: =203.29
+            X: =945.93
+            Y: =32
+            ZIndex: =4
+
+            ShiftTimingDropDown_1 As dropdown:
+                Height: =32
+                Items: =col_UserAvailability
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =10.79
+                Width: =203.29
+                X: =0.00
+                ZIndex: =1
+
+        Label4 As label:
+            Align: =Align.Center
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =12.44
+            Text: ="User(s) Name"
+            Width: =124.46
+            X: =0.00
+            Y: =82
+            ZIndex: =5
+
+        Label8 As label:
+            FontWeight: =FontWeight.Bold
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Details"
+            Width: =124.46
+            X: =22.40
+            Y: =275
+            ZIndex: =8
+
+        SecondMainCont As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.None
+            Height: =419
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Width: =1366
+            X: =0.00
+            Y: =275
+            ZIndex: =11
+
+            "'Claim Assignment Rule' As groupContainer.manualLayoutContainer":
+                BorderThickness: =1
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Width: =372
+                X: =977
+                Y: =88
+                ZIndex: =1
+
+                Label12 As label:
+                    Height: =32
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: ="Claim Assignment Rule"
+                    Width: =175.91
+                    X: =0.00
+                    ZIndex: =1
+
+                Dropdown3 As dropdown:
+                    Default: ="Select Rule"
+                    Height: =22
+                    Items: =[" ","HighDollarClaims","LowDollarClaims","FixedInterest"]
+                    PaddingRight: =8.30
+                    PaddingTop: =8.30
+                    Size: =10.79
+                    Width: =175.91
+                    X: =10.79
+                    Y: =50
+                    ZIndex: =2
+
+            Container8 As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =101
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Width: =372
+                X: =994
+                Y: =311
+                ZIndex: =2
+
+                Label13 As label:
+                    Height: =25
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: ="Inv Age Range"
+                    Width: =124.46
+                    X: =0.00
+                    ZIndex: =1
+
+                Label14 As label:
+                    Height: =27
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: |-
+                        ="Minimum Inv Age : "
+                    Width: =171.76
+                    X: =0.00
+                    Y: =25
+                    ZIndex: =2
+
+                Label14_1 As label:
+                    Height: =27
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: |-
+                        ="Maximum Inv Age : "
+                    Width: =171.76
+                    X: =0.00
+                    Y: =65
+                    ZIndex: =3
+
+                TextInput3 As text:
+                    Default: =""
+                    Height: =27
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Width: =91.27
+                    X: =141.06
+                    Y: =25
+                    ZIndex: =4
+
+                TextInput3_1 As text:
+                    Default: =""
+                    Height: =TextInput3.Height
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Width: =91.27
+                    X: =141.06
+                    Y: =65
+                    ZIndex: =5
+
+            BinAllocation As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                Height: =86
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Width: =396
+                X: =33
+                Y: =266
+                ZIndex: =3
+
+                Checkbox1 As checkbox:
+                    DisplayMode: =If(Checkbox2.Value,DisplayMode.Disabled,DisplayMode.Edit)
+                    Height: =34
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Size: =10.79
+                    Text: ="Manal Task Allocation "
+                    Width: =207.44
+                    X: =0.00
+                    ZIndex: =1
+
+                Label10 As label:
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: |-
+                        ="Claim Count :"
+                    Width: =124.46
+                    X: =0.00
+                    Y: =40
+                    ZIndex: =2
+
+                TextInput2 As text:
+                    Default: =""
+                    DisplayMode: =If(Checkbox1.Value,DisplayMode.Edit,DisplayMode.Disabled)
+                    Height: =35
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Width: =84.64
+                    X: =101.23
+                    Y: =42
+                    ZIndex: =3
+
+            ManualTaskCont As groupContainer.manualLayoutContainer:
+                BorderThickness: =1
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Width: =418
+                X: =508
+                Y: =24
+                ZIndex: =4
+
+                Checkbox2 As checkbox:
+                    DisplayMode: =If(Checkbox1.Value,DisplayMode.Disabled,DisplayMode.Edit)
+                    Height: =40
+                    PaddingRight: =0.00
+                    PaddingTop: =0.00
+                    Reset: =true
+                    Size: =10.79
+                    Text: ="Central Bin Allocation"
+                    Width: =221.54
+                    ZIndex: =1
+
+                Label11 As label:
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: |-
+                        ="Select Operation : "
+                    Width: =141.06
+                    X: =0.00
+                    Y: =40
+                    ZIndex: =2
+
+                Radio1 As radio:
+                    BorderStyle: =BorderStyle.None
+                    Default: ="Allocate"
+                    DisplayMode: =If(Checkbox2.Value,DisplayMode.Edit,DisplayMode.Disabled)
+                    Height: =69
+                    Items: =col_Radio
+                    PaddingRight: =0.00
+                    PaddingTop: =8.30
+                    RadioSize: =20
+                    Size: =10.79
+                    Width: =132.77
+                    X: =130.27
+                    Y: =25
+                    ZIndex: =3
+
+                Label10_1 As label:
+                    Height: =42
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Text: |-
+                        ="No of Claim(s) :"
+                    Width: =154.33
+                    X: =0.00
+                    Y: =80
+                    ZIndex: =4
+
+                TextInput2_1 As text:
+                    Default: =""
+                    DisplayMode: =If(Checkbox2.Value,DisplayMode.Edit,DisplayMode.Disabled)
+                    Height: =37
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =10.79
+                    Width: =105.38
+                    X: =143.55
+                    Y: =82
+                    ZIndex: =5
+
+                Button3 As button:
+                    DisabledBorderColor: =RGBA(215, 223, 240, 1)
+                    DisplayMode: =If(Checkbox2.Value,DisplayMode.Edit,DisplayMode.Disabled)
+                    PaddingRight: =4.15
+                    PaddingTop: =4.15
+                    Size: =12.44
+                    Text: ="Submit"
+                    Width: =132.77
+                    X: =69.70
+                    Y: =140
+                    ZIndex: =6
+
+            Button4 As button:
+                BorderThickness: =0
+                FontWeight: =FontWeight.Bold
+                Height: =85
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =16.59
+                Text: ="Allocate Task"
+                Width: =190.84
+                X: =618
+                Y: =267
+                ZIndex: =5
+
+    "'Claim Assignment' As label":
+        Height: =28
+        PaddingRight: =4.15
+        PaddingTop: =4.15
+        Size: =10.79
+        Text: ="Claim Assignment"
+        Width: =213.25
+        X: =48.3
+        Y: =220
+        ZIndex: =5
+
+    GridValues As groupContainer.manualLayoutContainer:
+        Height: =156
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Width: =Parent.Width
+        Y: =369
+        ZIndex: =6
+
+        Gallery1 As gallery.galleryVertical:
+            DelayItemLoading: =true
+            Height: =83
+            Items: =Table1
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =40
+            Width: =1366
+            Y: =73
+            ZIndex: =1
+
+            LoginGallery As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Login ID'
+                Width: =165
+                X: =0.00
+                ZIndex: =1
+
+            NameGAllery As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.Name
+                Width: =170
+                X: =165
+                ZIndex: =2
+
+            AssgGallary As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Assigned Claim(s)'
+                Width: =182
+                X: =336
+                ZIndex: =3
+
+            ProcessGallery As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Processed Claim(s)'
+                Width: =188
+                X: =519
+                ZIndex: =4
+
+            RoutedGallery As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Routed Claim(s)'
+                Width: =192
+                X: =708
+                ZIndex: =5
+
+            QueryGallery As label:
+                Align: =Align.Center
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Queried Claim(s)'
+                Width: =178
+                X: =901
+                ZIndex: =6
+
+            SHiftGallery As label:
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =ThisItem.'Shift Timings'
+                Width: =182
+                X: =1079
+                ZIndex: =7
+
+            DeallocateGallery As label:
+                BorderThickness: =2
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                Size: =10.79
+                Text: =""
+                Width: =152
+                X: =1262
+                ZIndex: =8
+
+            Button1 As button:
+                Fill: =RGBA(246, 88, 16, 1)
+                OnSelect: =Select(Parent)
+                PaddingRight: =4.15
+                PaddingTop: =4.15
+                RadiusBottomLeft: =20
+                RadiusBottomRight: =20
+                RadiusTopLeft: =20
+                RadiusTopRight: =20
+                Size: =12.44
+                Text: ="De-Allocate"
+                VerticalAlign: =VerticalAlign.Bottom
+                Width: =152
+                X: =1262
+                ZIndex: =9
+
+            Checkbox3 As checkbox:
+                Default: =Checkbox4.Value
+                Height: =27
+                OnSelect: =Select(Parent)
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =10.79
+                Text: =""
+                VerticalAlign: =VerticalAlign.Top
+                Width: =33
+                X: =6
+                ZIndex: =10
+
+        Login As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Login ID"
+            Width: =167
+            X: =0.00
+            Y: =5
+            ZIndex: =2
+
+        Name As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Name"
+            Width: =NameGAllery.Width
+            X: =NameGAllery.X
+            Y: =5
+            ZIndex: =3
+
+        Ass As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Assigned Claim(s)"
+            Width: =AssgGallary.Width
+            X: =AssgGallary.X
+            Y: =5
+            ZIndex: =4
+
+        proccess As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Processed Claim(s)"
+            Width: =ProcessGallery.Width
+            X: =ProcessGallery.X
+            Y: =5
+            ZIndex: =5
+
+        Routed As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Routed Claim(s)"
+            Width: =RoutedGallery.Width
+            X: =RoutedGallery.X
+            Y: =5
+            ZIndex: =6
+
+        Queired As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Queried Claim(s)"
+            Width: =QueryGallery.Width
+            X: =QueryGallery.X
+            Y: =5
+            ZIndex: =7
+
+        Shifttimings As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="Shift Timings"
+            Width: =SHiftGallery.Width
+            X: =SHiftGallery.X
+            Y: =5
+            ZIndex: =8
+
+        Deallocate As label:
+            Align: =Align.Center
+            BorderThickness: =2
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(50, 86, 160, 1)
+            Height: =68
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: ="De allocate Claims"
+            Width: =DeallocateGallery.Width
+            X: =1214
+            Y: =5
+            ZIndex: =9
+
+        Checkbox4 As checkbox:
+            Height: =42
+            OnCheck: =Checkbox3.Value
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =10.79
+            Text: =""
+            Width: =33.19
+            X: =8
+            Y: =18
+            ZIndex: =10
+
+    UserManagementContainer_1 As groupContainer.manualLayoutContainer:
+        Height: =125
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleUsermanagementContainer
+        Width: =146.87
+        X: =280
+        Y: =175
+        ZIndex: =7
+
+        Button2_3 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Registration"
+            Width: =146.87
+            X: =0.00
+            ZIndex: =1
+
+        Button2_4 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Manupulation"
+            Width: =146.87
+            X: =0.00
+            Y: =40
+            ZIndex: =2
+
+        Button2_5 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Client Mapping"
+            Width: =146.87
+            X: =0.00
+            Y: =83
+            ZIndex: =3
+
+    TaskAllocation_1 As groupContainer.manualLayoutContainer:
+        Height: =211
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleTaskAllocationContainer
+        Width: =146.87
+        X: =446
+        Y: =175
+        ZIndex: =8
+
+        Button2_12 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Details"
+            Width: =146.87
+            X: =0.00
+            ZIndex: =1
+
+        Button2_13 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Manual Task Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =40
+            ZIndex: =2
+
+        Button2_14 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Bin Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =83
+            ZIndex: =3
+
+        Button2_15 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Age Range Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =126
+            ZIndex: =4
+
+        Button2_16 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Claim Assignment Rule"
+            Width: =146.87
+            X: =0.00
+            Y: =169
+            ZIndex: =5
+
+    DetailsCont As groupContainer.manualLayoutContainer:
+        BorderThickness: =1
+        Height: =199
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =394
+        X: =69.03999999999999
+        Y: =554
+        ZIndex: =9
+
+        ClientName As label:
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Project Name : *"
+            Width: =124.46
+            X: =0.00
+            ZIndex: =1
+
+        Dropdown2 As dropdown:
+            Height: =22
+            Items: =col_ClientName
+            PaddingRight: =8.30
+            PaddingTop: =8.30
+            Size: =10.79
+            Width: =153.51
+            X: =124.46
+            Y: =9
+            ZIndex: =2
+
+        ClientName_1 As label:
+            Height: =30
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Remaining Unprocessed Claim :"
+            Width: =240.63
+            X: =0.00
+            Y: =40
+            ZIndex: =3
+
+        ClientName_2 As label:
+            Height: =30
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Today's  Processed Claim :"
+            Width: =240.63
+            X: =0.00
+            Y: =70
+            ZIndex: =4
+
+        ClientName_3 As label:
+            Height: =30
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Claim Available in Central Bin :"
+            Width: =240.63
+            X: =0.00
+            Y: =100
+            ZIndex: =5
+
+        ClientName_4 As label:
+            Height: =30
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Total Unassigned Claim :"
+            Width: =240.63
+            X: =0.00
+            Y: =130
+            ZIndex: =6
+
+        ClientName_5 As label:
+            Height: =30
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Total Aside Claim :"
+            Width: =240.63
+            X: =0.00
+            Y: =160
+            ZIndex: =7
+
+    Report_1 As groupContainer.manualLayoutContainer:
+        Height: =86
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleReports
+        Width: =113
+        X: =1091
+        Y: =175
+        ZIndex: =10
+
+        Reports_1 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(ReportScreen);Set(visibleReports,false);Reset(Dropdown4);Reset(Dropdown4_1);Set(Varexcelexport,false)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Reports"
+            Width: =113
+            X: =0.00
+            ZIndex: =1
+
+        Charts_1 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(ReportScreen);Set(visibleReports,false);Reset(Dropdown4);Reset(Dropdown4_1);Set(Varexcelexport,false)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Charts"
+            Width: =113
+            X: =0.00
+            Y: =40
+            ZIndex: =2
+

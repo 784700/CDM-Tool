@@ -1,0 +1,1447 @@
+ClaimManagementScreen As screen:
+
+    Form_ClaiimManagement As form:
+        DataSource: =CDM_ClaimManagement_DKS
+        Height: =149
+        Item: =Defaults(CDM_ClaimManagement_DKS)
+        Width: =1285
+        X: =40
+        Y: =248
+        ZIndex: =1
+
+        "'Project Name_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_claimtype"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_claimtype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue3.Selected.Value
+            Width: =428
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue3.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices('Claim Type')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey3.X + DataCardKey3.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+        "'From Date_DataCard1' As typedDataCard.dateTimeEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_fromdate"
+            Default: =ThisItem.'From Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_fromdate")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =72
+            Required: =true
+            Update: =If(Not IsBlank(DateValue1.SelectedDate), DateValue1.SelectedDate, 0)
+            Width: =428
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =11
+                ZIndex: =1
+
+            DateValue1 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =166
+                Y: =8
+                ZIndex: =2
+
+            Separator1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |-
+                    =":"
+                Width: =10
+                Wrap: =false
+                X: =
+                Y: =
+                ZIndex: =4
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =10
+                Y: =55
+                ZIndex: =6
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =11
+                ZIndex: =7
+
+        "'To Date_DataCard1' As typedDataCard.dateTimeEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_todate"
+            Default: =ThisItem.'To Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_todate")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =If(Not IsBlank(DateValue2.SelectedDate), DateValue2.SelectedDate, 0)
+            Width: =428
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey6 As label:
+                Height: =37
+                Text: =Parent.DisplayName
+                Width: =102
+                Wrap: =false
+                X: =60
+                Y: =13
+                ZIndex: =1
+
+            DateValue2 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =187
+                Y: =10
+                ZIndex: =2
+
+            Separator2 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |-
+                    =":"
+                Width: =10
+                Wrap: =false
+                X: =
+                Y: =
+                ZIndex: =4
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =62
+                ZIndex: =6
+
+            StarVisible5 As label:
+                Align: =Align.Center
+                Height: =DataCardKey6.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =30
+                Y: =13
+                ZIndex: =7
+
+        "'Ref No_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_refno"
+            Default: =ThisItem.'Ref No'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_refno")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =18
+            MaxLength: =DataSourceInfo([@CDM_ClaimManagement_DKS], DataSourceInfo.MaxLength, "cr5be_refno")
+            Required: =true
+            Update: =DataCardValue4.Text
+            Width: =428
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue4.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue4 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey5.X + DataCardKey5.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4.Y + DataCardValue4.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5.Y
+                ZIndex: =4
+
+        "'Batch No_DataCard1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_projectname"
+            Default: =ThisItem.'Batch No'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_projectname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =26
+            MaxLength: =DataSourceInfo([@CDM_ClaimManagement_DKS], DataSourceInfo.MaxLength, "cr5be_projectname")
+            Required: =true
+            Update: =DataCardValue1.Text
+            Width: =428
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey1.X + DataCardKey1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+    AllManuControlsContainer_1 As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        DropShadow: =DropShadow.None
+        Height: =383
+        Width: =1440
+        Y: =40
+        ZIndex: =2
+
+        Image2_3 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            Width: =1440
+            ZIndex: =1
+
+        HomeTABS_Container_2 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =App.MinScreenWidth
+            Y: =80
+            ZIndex: =2
+
+            HomeButton_2 As button:
+                Fill: =HomeTABS_Container_2.Fill
+                Font: =Font.'Lato Light'
+                Height: =53
+                OnSelect: =Navigate(ClaimManagementScreen)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Text: ="Home"
+                Width: =107
+                Y: =2
+                ZIndex: =1
+
+            UserManagementButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                OnSelect: |-
+                    =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));
+                    Set(VisibleAdminToolContainer,false);
+                    Set(VisibleUploadContainer,false)
+                Size: =12
+                Text: ="User Management"
+                Width: =177
+                X: =123
+                ZIndex: =2
+
+            UserManagementDownICON_2 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: |-
+                    =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));
+                    Set(VisibleAdminToolContainer,false);
+                    Set(VisibleUploadContainer,false)
+                Width: =15
+                X: =275
+                Y: =9
+                ZIndex: =3
+
+            TaskAllocationButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                Size: =12
+                Text: ="Task Allocation"
+                Width: =162
+                X: =312
+                ZIndex: =4
+
+            RuleBuilderButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                Size: =12
+                Text: ="Rule Builder"
+                Width: =133
+                X: =493
+                ZIndex: =5
+
+            UploadInventoryButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                OnSelect: |-
+                    =If(VisibleUploadContainer,Set(VisibleUploadContainer,false),Set(VisibleUploadContainer,true));
+                    Set(visibleUsermanagementContainer,false);
+                    Set(VisibleAdminToolContainer,false)
+                Size: =12
+                Text: ="Upload Inventory"
+                Width: =185
+                X: =640
+                ZIndex: =6
+
+            AdminToolButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                OnSelect: |-
+                    =If(VisibleAdminToolContainer,Set(VisibleAdminToolContainer,false),Set(VisibleAdminToolContainer,true));
+                    Set(visibleUsermanagementContainer,false);
+                    Set(VisibleUploadContainer,false)
+                Size: =12
+                Text: ="Admin Tool"
+                Width: =179
+                X: =840
+                ZIndex: =7
+
+            ReportButton_2 As button:
+                Align: =Align.Left
+                Fill: =HomeTABS_Container_2.Fill
+                Height: =55
+                Size: =12
+                Text: ="Report"
+                Width: =103
+                X: =1046
+                ZIndex: =8
+
+            TaskAllocationDownICON_4 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+                Width: =15
+                X: =439
+                Y: =9
+                ZIndex: =9
+
+            RuleBuilderDownICON_5 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+                Width: =15
+                X: =606
+                Y: =9
+                ZIndex: =10
+
+            UploadInventoryDownICON_6 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: |-
+                    =If(VisibleUploadContainer,Set(VisibleUploadContainer,false),Set(VisibleUploadContainer,true));
+                    Set(visibleUsermanagementContainer,false);
+                    Set(VisibleAdminToolContainer,false)
+                Width: =15
+                X: =786
+                Y: =9
+                ZIndex: =11
+
+            AdminToolDownICON_7 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: |-
+                    =If(VisibleAdminToolContainer,Set(VisibleAdminToolContainer,false),Set(VisibleAdminToolContainer,true));
+                    Set(visibleUsermanagementContainer,false);
+                    Set(VisibleUploadContainer,false)
+                Width: =15
+                X: =942
+                Y: =9
+                ZIndex: =12
+
+            ReportDownICON_8 As icon.ChevronDown:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =40
+                Icon: =Icon.ChevronDown
+                OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+                Width: =15
+                X: =1109
+                Y: =9
+                ZIndex: =13
+
+        UserLoginInfoContainer_2 As groupContainer.manualLayoutContainer:
+            Height: =41
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1440
+            Y: =135
+            ZIndex: =3
+
+            UserNameLabel_2 As label:
+                Color: =RGBA(116, 116, 116, 1)
+                FontWeight: =FontWeight.Bold
+                OnSelect: =If(VisibleUserLogoutContainer,Set(VisibleUserLogoutContainer,false),Set(VisibleUserLogoutContainer,true))
+                Text: ="Welcome.."&User().FullName
+                Width: =261
+                ZIndex: =2
+
+            Timer1_2 As timer:
+                AutoStart: =true
+                Duration: =1000
+                OnTimerEnd: =Set(TimeinSec,Now())
+                OnTimerStart: =Set(TimeinSec,Now())
+                Repeat: =true
+                Visible: =false
+                X: =272
+                ZIndex: =4
+
+            LogoutButton_2 As button:
+                Fill: =RGBA(116, 116, 116, 1)
+                OnSelect: =Navigate(MainScreen)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                TabIndex: =1
+                Text: ="Logout"
+                Width: =94
+                X: =1345
+                ZIndex: =6
+
+            Label_DateTime_2 As label:
+                Color: =RGBA(151, 0, 0, 1)
+                FontWeight: =FontWeight.Bold
+                Text: |-
+                    =Text(TimeinSec,"h:m:ss am/pm, ddd, m/d/yyy")
+                Width: =310
+                X: =508
+                ZIndex: =7
+
+        AdminToolContainer_2 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Height: =199
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =VisibleAdminToolContainer
+            Width: =178
+            X: =840
+            Y: =135
+            ZIndex: =4
+
+            Button_UserManagement_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Claim Management"
+                Width: =177
+                ZIndex: =1
+
+            Button_ProjectRegistration_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Project Registration"
+                Width: =177
+                Y: =40
+                ZIndex: =2
+
+            Button_BulkClaimDeletion_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Bulk Claim Deletion"
+                Width: =177
+                Y: =83
+                ZIndex: =3
+
+            Icon_MinimizeAdminToolTabs_2 As icon.ChevronUp:
+                Height: =30
+                Icon: =Icon.ChevronUp
+                OnSelect: =Set(VisibleAdminToolContainer,false)
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =177
+                Y: =169
+                ZIndex: =6
+
+            Button_CreateWorkFlow_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Create Work Flow"
+                Width: =177
+                Y: =126
+                ZIndex: =7
+
+            Button_BackupRestore_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Backup/Restore"
+                Width: =177
+                Y: =126
+                ZIndex: =8
+
+        UploadInventoryContainer_1 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Height: =66
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =VisibleUploadContainer
+            Width: =183
+            X: =640
+            Y: =135
+            ZIndex: =5
+
+            Button_UploadInventory_1 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                OnSelect: |-
+                    =Navigate(UploadInventoryScreen,ScreenTransition.Fade);
+                    Set(VisibleUploadContainer,false)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="Upload Inventory"
+                Width: =183
+                ZIndex: =1
+
+            Icon_MinimizeUserMgmtTabs_3 As icon.ChevronUp:
+                Height: =23
+                Icon: =Icon.ChevronUp
+                OnSelect: =Set(VisibleUploadContainer,false)
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =183
+                Y: =43
+                ZIndex: =6
+
+        UserManagementContainer_2 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Bold
+            Height: =152
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =visibleUsermanagementContainer
+            Width: =177
+            X: =124
+            Y: =126
+            ZIndex: =6
+
+            Button_UserRegistration_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="User Registration"
+                Width: =177
+                ZIndex: =1
+
+            Button_UserManupulation_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="User Manupulation"
+                Width: =177
+                Y: =40
+                ZIndex: =2
+
+            Button_UserClientMapping_2 As button:
+                Color: =RGBA(0, 94, 146, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =43
+                HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10
+                Text: ="User Client Mapping"
+                Width: =177
+                Y: =83
+                ZIndex: =3
+
+            Icon_MinimizeUserMgmtTabs_5 As icon.ChevronUp:
+                Height: =26
+                Icon: =Icon.ChevronUp
+                OnSelect: =Set(visibleUsermanagementContainer,false)
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =177
+                Y: =126
+                ZIndex: =6
+
+    Button_SubmitClaimMgmt As button:
+        Height: =28
+        OnSelect: =SubmitForm(Form_ClaiimManagement)
+        Text: ="Search"
+        Width: =115
+        X: =1325
+        Y: =259
+        ZIndex: =3
+
+    Button_CancelClaimMgmt As button:
+        Height: =28
+        Text: ="Cancel"
+        Width: =115
+        X: =1325
+        Y: =315
+        ZIndex: =4
+
+    Rectangle_ClaimMgmt As rectangle:
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =181
+        Width: =1440
+        Y: =216
+        ZIndex: =5
+
+    Label_ClaimManagement As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Size: =15
+        Text: ="Claim Management"
+        Width: =226
+        X: =40
+        Y: =216
+        ZIndex: =6
+
+    Rectangle_ExcelFileUpload As rectangle:
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =414
+        Width: =726
+        X: =40
+        Y: =423
+        ZIndex: =7
+
+    Label_ClaimManagement_1 As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Size: =15
+        Text: ="Excel File Upload"
+        Width: =226
+        X: =40
+        Y: =423
+        ZIndex: =8
+
+    Button_Submit_1 As button:
+        Height: =41
+        OnSelect: |-
+            =If(
+                IsEmpty(DataCardValue10_1.Attachments),
+                Notify("Please upload valid attachment"),
+                SubmitForm(Form_UploadFile_1);
+                ResetForm(Form_UploadFile_1);
+                
+            )
+        Text: ="Submit"
+        Width: =146
+        X: =104
+        Y: =769
+        ZIndex: =9
+
+    Button_Cancel_1 As button:
+        Height: =41
+        OnSelect: =ResetForm(Form_UploadFile_1)
+        Text: ="Cancel"
+        Width: =146
+        X: =369
+        Y: =769
+        ZIndex: =10
+
+    Form_UploadFile_1 As form:
+        DataSource: =UploadTables
+        Height: =314
+        Item: =Defaults(UploadTables)
+        NumberOfColumns: =1
+        Width: =539
+        X: =40
+        Y: =455
+        ZIndex: =11
+
+        "'Project Name_DataCard2_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_projectname"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@UploadTables],DataSourceInfo.DisplayName,"cr5be_projectname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =84
+            Required: =true
+            Update: =DataCardValue11_1.Selected.Value
+            Width: =539
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey11_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue11_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue11_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices('Project Name')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey11_1.X + DataCardKey11_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage9_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11_1.Y + DataCardValue11_1.Height
+                ZIndex: =3
+
+            StarVisible9_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_1.Y
+                ZIndex: =4
+
+        "'File Type_DataCard2_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_filetype"
+            Default: =ThisItem.'File Type'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@UploadTables],DataSourceInfo.DisplayName,"cr5be_filetype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =85
+            Required: =true
+            Update: =DataCardValue9_1.Selected.Value
+            Width: =539
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey9_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue9_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue9_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices('File Type')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey9_1.X + DataCardKey9_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage7_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue9_1.Y + DataCardValue9_1.Height
+                ZIndex: =3
+
+            StarVisible7_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey9_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_1.Y
+                ZIndex: =4
+
+        "'Upload File_DataCard2_1' As typedDataCard.fileEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_uploadfile"
+            Default: |-
+                =If(!IsBlank(ThisItem.'Upload File'.FileName), Table({DisplayName: ThisItem.'Upload File'.FileName, Value: ThisItem.'Upload File'.Value}), Blank())
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@UploadTables],DataSourceInfo.DisplayName,"cr5be_uploadfile")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =135
+            Required: =false
+            Update: =DataCardValue10_1.Attachments
+            Width: =539
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey10_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue10_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue10_1 As attachments:
+                AddAttachmentText: ="Upload file"
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =102
+                IsInDataCard: =true
+                Items: =Parent.Default
+                MaxAttachments: =1
+                MaxAttachmentsText: =""
+                NoAttachmentsText: ="There is no file."
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =303
+                X: =DataCardKey10_1.X + DataCardKey10_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage8_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10_1.Y + DataCardValue10_1.Height
+                ZIndex: =3
+
+            StarVisible8_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey10_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_1.Y
+                ZIndex: =4
+
+        "'Uploaded Date_DataCard3_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_uploadeddate"
+            Default: =ThisItem.'Uploaded Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@UploadTables],DataSourceInfo.DisplayName,"cr5be_uploadeddate")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@UploadTables], DataSourceInfo.MaxLength, "cr5be_uploadeddate")
+            Required: =true
+            Update: =DataCardValue7_1.Text
+            Visible: =false
+            Width: =539
+            X: =0
+            Y: =3
+            ZIndex: =12
+
+            DataCardKey7_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue7_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue7_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: |-
+                    =Text(TimeinSec,"h:m:ss am/pm, ddd, m/d/yyy")
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey7_1.X + DataCardKey7_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage6_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7_1.Y + DataCardValue7_1.Height
+                ZIndex: =3
+
+            StarVisible6_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7_1.Y
+                ZIndex: =4
+
+    Rectangle_ExcelFileUpload_1 As rectangle:
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =414
+        Width: =678
+        X: =762
+        Y: =418
+        ZIndex: =12
+
+    Label_ClaimManagement_2 As label:
+        Color: =RGBA(39, 67, 125, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Size: =15
+        Text: ="Bulk Claim Delete"
+        Width: =226
+        X: =882
+        Y: =432
+        ZIndex: =13
+
+    Form_DeleteBulk As form:
+        DataSource: =CDM_ClaimManagement_DKS
+        Height: =200
+        Item: =Defaults(CDM_ClaimManagement_DKS)
+        NumberOfColumns: =1
+        Width: =518
+        X: =882
+        Y: =476
+        ZIndex: =14
+
+        "'Project Name_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_claimtype"
+            Default: =ThisItem.'Project Name'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_claimtype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue3_1.Selected.Value
+            Width: =518
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey3_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue3_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue3_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                IsSearchable: =false
+                Items: =Choices('Claim Type')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey3_1.X + DataCardKey3_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage2_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3_1.Y + DataCardValue3_1.Height
+                ZIndex: =3
+
+            StarVisible2_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey3_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3_1.Y
+                ZIndex: =4
+
+        "'Ref No_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_refno"
+            Default: =ThisItem.'Ref No'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_refno")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =18
+            MaxLength: =DataSourceInfo([@CDM_ClaimManagement_DKS], DataSourceInfo.MaxLength, "cr5be_refno")
+            Required: =false
+            Update: =DataCardValue4_1.Text
+            Width: =518
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey5_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue4_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue4_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey5_1.X + DataCardKey5_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage4_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4_1.Y + DataCardValue4_1.Height
+                ZIndex: =3
+
+            StarVisible4_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey5_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5_1.Y
+                ZIndex: =4
+
+        "'Batch No_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr5be_projectname"
+            Default: =ThisItem.'Batch No'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@CDM_ClaimManagement_DKS],DataSourceInfo.DisplayName,"cr5be_projectname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =26
+            MaxLength: =DataSourceInfo([@CDM_ClaimManagement_DKS], DataSourceInfo.MaxLength, "cr5be_projectname")
+            Required: =false
+            Update: =DataCardValue1_1.Text
+            Width: =518
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            DataCardKey1_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue1_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue1_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey1_1.X + DataCardKey1_1.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage1_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1_1.Y + DataCardValue1_1.Height
+                ZIndex: =3
+
+            StarVisible1_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1_1.Y
+                ZIndex: =4
+
+    Button_Submit_2 As button:
+        Height: =41
+        OnSelect: =SubmitForm(Form_DeleteBulk)
+        Text: ="Submit"
+        Width: =106
+        X: =905
+        Y: =719
+        ZIndex: =15
+
+    Button_Reset_2 As button:
+        Height: =41
+        OnSelect: =ResetForm(Form_DeleteBulk)
+        Text: ="Reset"
+        Width: =100
+        X: =1060
+        Y: =719
+        ZIndex: =16
+
+    Button_Cancel_3 As button:
+        Height: =41
+        OnSelect: =ResetForm(Form_DeleteBulk)
+        Text: ="Cancel"
+        Width: =100
+        X: =1206
+        Y: =719
+        ZIndex: =17
+

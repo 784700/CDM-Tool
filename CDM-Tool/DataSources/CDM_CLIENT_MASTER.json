@@ -1,0 +1,47 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "ADDTIONAL_CLAIM": "ADDTIONAL_CLAIM",
+      "CLIENT_ABR": "CLIENT_ABR",
+      "CLIENT_ID": "CLIENT_ID",
+      "CLIENT_NAME": "CLIENT_NAME",
+      "COB_REQUIRED": "COB_REQUIRED",
+      "CONDITIONAL_STATUS": "CONDITIONAL_STATUS",
+      "DB_NAME": "DB_NAME",
+      "DB_PATH": "DB_PATH",
+      "DB_SERVER_NAME": "DB_SERVER_NAME",
+      "EMAILID": "EMAILID",
+      "FLOW_TYPE": "FLOW_TYPE",
+      "INPUT_TYPE": "INPUT_TYPE",
+      "INSERT_DATE": "INSERT_DATE",
+      "IS_ACTIVE": "IS_ACTIVE",
+      "LOAD_PER_DAY": "LOAD_PER_DAY",
+      "MAIL_BOX": "MAIL_BOX",
+      "N_PER_AUDIT_VAL": "N_PER_AUDIT_VAL",
+      "PASSWORD": "PASSWORD",
+      "PEAK_LOAD_DAY": "PEAK_LOAD_DAY",
+      "REMARK": "REMARK",
+      "REVIEW_REQUIRED": "REVIEW_REQUIRED",
+      "TSN_DELETE_LOGIN": "TSN_DELETE_LOGIN",
+      "TSN_DELETE_TIMESTAMP": "TSN_DELETE_TIMESTAMP",
+      "TSN_INSERT_LOGIN": "TSN_INSERT_LOGIN",
+      "TSN_INSERT_TIMESTAMP": "TSN_INSERT_TIMESTAMP",
+      "TSN_UPDATE_LOGIN": "TSN_UPDATE_LOGIN",
+      "TSN_UPDATE_TIMESTAMP": "TSN_UPDATE_TIMESTAMP",
+      "UPDATE_CLAIM": "UPDATE_CLAIM",
+      "USER_ID": "USER_ID"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "CDM_CLIENT_MASTER",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

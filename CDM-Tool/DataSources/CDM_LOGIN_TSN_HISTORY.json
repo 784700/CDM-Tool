@@ -1,0 +1,37 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "EXTRA_FIELD_1": "EXTRA_FIELD_1",
+      "EXTRA_FIELD_2": "EXTRA_FIELD_2",
+      "EXTRA_FIELD_3": "EXTRA_FIELD_3",
+      "EXTRA_FIELD_4": "EXTRA_FIELD_4",
+      "EXTRA_FIELD_5": "EXTRA_FIELD_5",
+      "EXTRA_FIELD_6": "EXTRA_FIELD_6",
+      "LOGGED_IN_PC_NAME": "LOGGED_IN_PC_NAME",
+      "LOGGED_IN_PROCESS_ID": "LOGGED_IN_PROCESS_ID",
+      "LOGGED_IN_PROCESS_NAME": "LOGGED_IN_PROCESS_NAME",
+      "LOGGED_OFF_END_PROCESS_ID": "LOGGED_OFF_END_PROCESS_ID",
+      "LOGGED_OFF_END_PROCESS_NAME": "LOGGED_OFF_END_PROCESS_NAME",
+      "LOGIN_END_TIME": "LOGIN_END_TIME",
+      "LOGIN_ID": "LOGIN_ID",
+      "LOGIN_NAME": "LOGIN_NAME",
+      "LOGIN_START_TIME": "LOGIN_START_TIME",
+      "LOGIN_TSN_ID": "LOGIN_TSN_ID",
+      "TSN_INSERT_PC_NAME": "TSN_INSERT_PC_NAME",
+      "TSN_INSERT_TIMESTAMP": "TSN_INSERT_TIMESTAMP",
+      "TSN_INSERT_WINLOGIN": "TSN_INSERT_WINLOGIN"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "CDM_LOGIN_TSN_HISTORY",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

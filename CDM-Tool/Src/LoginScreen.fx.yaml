@@ -1,0 +1,265 @@
+LoginScreen As screen:
+
+    "'Customised LOGO' As groupContainer.manualLayoutContainer":
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        Visible: =false
+        Width: =App.MinScreenWidth
+        Y: =40
+        ZIndex: =1
+
+        Image2_2 As image:
+            BorderColor: =RGBA(149, 149, 149, 1)
+            Fill: =RGBA(149, 149, 149, 1)
+            Height: =80
+            Image: =CDMpic
+            Width: =1020
+            X: =420
+            ZIndex: =1
+
+        Label1_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Emblem Health"
+            Width: =420
+            ZIndex: =2
+
+    LoginContainer As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        DropShadow: =DropShadow.Semibold
+        Fill: =RGBA(77, 77, 77, 1)
+        Height: =648
+        PaddingBottom: =50
+        PaddingLeft: =50
+        PaddingRight: =50
+        PaddingTop: =50
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Width: =820
+        X: =350
+        Y: =169
+        ZIndex: =2
+
+        UserNameInput As text:
+            BorderColor: =RGBA(102, 102, 102, 1)
+            Default: =""
+            Height: =80
+            HintText: ="Please Enter Emp.ID"
+            OnSelect: =Set(Labletxt,false)
+            PaddingLeft: =55
+            Size: =18
+            Width: =416
+            X: =40
+            Y: =129
+            ZIndex: =1
+
+        PasswordInput As text:
+            BorderColor: =RGBA(102, 102, 102, 1)
+            Default: =""
+            Height: =80
+            HintText: ="Please Enter Password"
+            Mode: =lableView
+            OnSelect: =Set(lableView,TextMode.Password)
+            PaddingLeft: =55
+            Size: =18
+            Width: =416
+            X: =40
+            Y: =282
+            ZIndex: =2
+
+        UserLoginLabel As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =96
+            Size: =40
+            Text: ="User Login"
+            Width: =550
+            X: =130
+            Y: =2
+            ZIndex: =3
+
+        "'User Icon' As icon.AddUser":
+            Color: =RGBA(26, 26, 26, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =80
+            Icon: =Icon.AddUser
+            PaddingLeft: =5
+            PaddingRight: =10
+            Width: =45
+            X: =45
+            Y: =129
+            ZIndex: =4
+
+        "'Password Icon' As icon.Lock":
+            Color: =RGBA(26, 26, 26, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =80
+            Icon: =Icon.Lock
+            PaddingLeft: =5
+            PaddingRight: =10
+            Width: =45
+            X: =45
+            Y: =282
+            ZIndex: =5
+
+        LoginButton As button:
+            Color: =RGBA(0, 13, 75, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            Height: =60
+            OnSelect: |
+                =Set(userrole,
+                    LookUp(
+                        'User Credentials',
+                        'User Name' = UserNameInput.Text And Password = PasswordInput.Text
+                    ).Role
+                );
+                If(
+                    IsBlankOrError(userrole),
+                    Notify("Incorrect UserName or Password");
+                    Set(
+                        Labletxt,
+                        true
+                    ),
+                    Switch(
+                        userrole,
+                        "admin",
+                        Navigate(HomeScreen),
+                        "User",
+                        Navigate(OperatorScreen),
+                        "SuperAdmin",
+                        Navigate(HomeScreen),Notify("Assigned Role is Not Matching, Please contact administartor to modify it");
+                    )
+                );
+                Reset(UserNameInput);
+                Reset(PasswordInput);
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =18
+            Text: ="Login"
+            Width: =269
+            X: =113
+            Y: =524
+            ZIndex: =6
+
+        ErrorMessage As label:
+            Color: =RGBA(246, 88, 16, 1)
+            Size: =15
+            Text: ="Incorrect UserName or Password"
+            Visible: =Labletxt
+            Width: =680
+            X: =45
+            Y: =396
+            ZIndex: =8
+
+        ViewIcon As icon.View:
+            Height: =80
+            Icon: =Icon.View
+            OnSelect: =Set(lableView,TextMode.SingleLine);Set(varpasswordview,false);Set(varpasswordhide,true)
+            PaddingLeft: =15
+            PaddingRight: =10
+            Visible: =varpasswordview
+            Width: =55
+            X: =401
+            Y: =282
+            ZIndex: =9
+
+        Image3 As image:
+            BorderColor: =RGBA(77, 77, 77, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(102, 102, 102, 1)
+            Height: =272
+            Image: =AdminLoginIcon
+            Width: =266
+            X: =506
+            Y: =124
+            ZIndex: =10
+
+        HideIcon As icon.Hide:
+            Height: =80
+            Icon: =Icon.Hide
+            OnSelect: =Set(lableView,TextMode.Password);Set(varpasswordview,true);Set(varpasswordhide,false)
+            PaddingLeft: =15
+            PaddingRight: =10
+            Visible: =varpasswordhide
+            Width: =55
+            X: =401
+            Y: =282
+            ZIndex: =12
+
+        Label2 As label:
+            Color: =RGBA(214, 223, 238, 1)
+            Height: =42
+            OnSelect: =Set(AdminContainer,true)
+            Text: ="Forgot Password ?"
+            Width: =274
+            X: =45
+            Y: =455
+            ZIndex: =13
+
+        admincontactContainer As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(237, 237, 237, 1)
+            Visible: =AdminContainer
+            X: =178
+            Y: =124
+            ZIndex: =14
+
+            Label3 As label:
+                Align: =Align.Center
+                Color: =RGBA(56, 96, 178, 1)
+                Height: =113
+                Size: =18
+                Text: ="! Please Contact Administartor to reset Password !"
+                Width: =500
+                ZIndex: =1
+
+            Button1_1 As button:
+                Fill: =RGBA(102, 102, 102, 1)
+                Height: =65
+                OnSelect: =Set(AdminContainer,false)
+                RadiusBottomLeft: =65
+                RadiusBottomRight: =65
+                RadiusTopLeft: =65
+                RadiusTopRight: =65
+                Text: ="OK"
+                Width: =72
+                X: =214
+                Y: =113
+                ZIndex: =2
+
+    CDMLogo As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        Width: =App.MinScreenWidth
+        Y: =40
+        ZIndex: =3
+
+        Label1_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Emblem Health"
+            Visible: =false
+            Width: =420
+            ZIndex: =2
+
+        Image2_4 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            Width: =1440
+            ZIndex: =3
+

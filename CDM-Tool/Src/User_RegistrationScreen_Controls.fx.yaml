@@ -1,0 +1,761 @@
+User_RegistrationScreen_Controls As screen:
+
+    UserLogoutContainer_6 As groupContainer.manualLayoutContainer:
+        Height: =162
+        Visible: =VisibleUserLogoutContainer
+        Width: =212
+        X: =40
+        Y: =171
+        ZIndex: =1
+
+        LogoutButton_11 As button:
+            OnSelect: =Navigate(LoginScreen)
+            Text: ="Logout"
+            X: =22
+            Y: =52
+            ZIndex: =1
+
+    LogoContainer_9 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        Width: =App.MinScreenWidth
+        ZIndex: =2
+
+        Label1_11 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Emblem Health"
+            Visible: =false
+            Width: =420
+            ZIndex: =2
+
+        Image2_13 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            Width: =App.MinScreenWidth
+            ZIndex: =3
+
+    SubmitButton_3 As button:
+        Height: =39
+        OnSelect: =
+        Text: ="Submit"
+        X: =472
+        Y: =810
+        ZIndex: =3
+
+    CancelButton_3 As button:
+        Height: =39
+        OnSelect: =Navigate(HomeScreen)
+        Text: ="Cancel"
+        X: =957
+        Y: =810
+        ZIndex: =4
+
+    "'Reset Button_3' As button":
+        Height: =39
+        OnSelect: =
+        Text: ="Reset"
+        X: =710
+        Y: =810
+        ZIndex: =5
+
+    UserRegistrationlabelContainer_2 As groupContainer.manualLayoutContainer:
+        Height: =45
+        Width: =1440
+        Y: =169
+        ZIndex: =6
+
+        Label4_4 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =45
+            Size: =25
+            Text: ="--------- User  Registration --------"
+            Width: =1440
+            ZIndex: =1
+
+    HomeTABS_Container_11 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.ExtraBold
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =55
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =App.MinScreenWidth
+        Y: =69
+        ZIndex: =7
+
+        HomeButton_11 As button:
+            Font: =Font.'Lato Light'
+            Height: =50
+            OnSelect: =Navigate(HomeScreen);Set(visibleRuleBuilderContainer,false);Set(visibleUsermanagementContainer,false)
+            Text: ="Home"
+            Width: =107
+            X: =15
+            ZIndex: =1
+
+        UserManagementButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleRuleBuilderContainer,false)
+            Size: =12
+            Text: ="User Management"
+            Width: =177
+            X: =137
+            ZIndex: =2
+
+        UserManagementDownICON_11 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleRuleBuilderContainer,false)
+            Width: =15
+            X: =293
+            ZIndex: =3
+
+        TaskAllocationButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            Size: =12
+            Text: ="Task Allocation"
+            Width: =165
+            X: =332
+            ZIndex: =4
+
+        RuleBuilderButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            OnSelect: =If(visibleRuleBuilderContainer,Set(visibleRuleBuilderContainer,false),Set(visibleRuleBuilderContainer,true));Set(visibleUsermanagementContainer,false)
+            Size: =12
+            Text: ="Rule Builder"
+            Width: =148
+            X: =510
+            ZIndex: =5
+
+        UploadInventoryButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            Size: =12
+            Text: ="Upload Inventory"
+            Width: =190
+            X: =677
+            ZIndex: =6
+
+        AdminToolButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            Size: =12
+            Text: ="Admin Tool"
+            Width: =165
+            X: =882
+            ZIndex: =7
+
+        ReportButton_11 As button:
+            Align: =Align.Left
+            Height: =50
+            Size: =12
+            Text: ="Report"
+            Width: =103
+            X: =1058
+            ZIndex: =8
+
+        TaskAllocationDownICON_13 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =473
+            ZIndex: =9
+
+        RuleBuilderDownICON_14 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleUsermanagementContainer,false)
+            Width: =16
+            X: =633
+            ZIndex: =10
+
+        UploadInventoryDownICON_15 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =846
+            ZIndex: =11
+
+        AdminToolDownICON_16 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =1018
+            ZIndex: =12
+
+        ReportDownICON_17 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =15
+            X: =1138
+            ZIndex: =13
+
+        Rectangle1_48 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            ZIndex: =14
+
+        Rectangle1_55 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =279
+            X: =1161
+            ZIndex: =15
+
+        Rectangle1_49 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =122
+            ZIndex: =16
+
+        Rectangle1_50 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =317
+            ZIndex: =17
+
+        Rectangle1_51 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =495
+            ZIndex: =18
+
+        Rectangle1_52 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =662
+            ZIndex: =19
+
+        Rectangle1_53 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =867
+            ZIndex: =20
+
+        Rectangle1_54 As rectangle:
+            Fill: =RGBA(227, 234, 243, 1)
+            Height: =55
+            Width: =15
+            X: =1043
+            ZIndex: =21
+
+    UserLoginInfoContainer_11 As groupContainer.manualLayoutContainer:
+        Height: =45
+        Width: =1440
+        Y: =124
+        ZIndex: =8
+
+        UserNameLabel_11 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =45
+            OnSelect: =If(VisibleUserLogoutContainer,Set(VisibleUserLogoutContainer,false),Set(VisibleUserLogoutContainer,true))
+            Text: ="Welcome Rajavardhan"
+            Width: =204
+            ZIndex: =2
+
+        Logout_Button_6 As button:
+            Height: =45
+            OnSelect: =Navigate(LoginScreen)
+            Text: ="Logout"
+            X: =1280
+            ZIndex: =6
+
+    RuleBuilderpopupContainer_6 As groupContainer.manualLayoutContainer:
+        Height: =75
+        Visible: =visibleRuleBuilderContainer
+        Width: =150
+        X: =550
+        Y: =124
+        ZIndex: =9
+
+        RuleBuilder_Button_6 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(RuleBuilderScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="Rule Builder"
+            Width: =150
+            ZIndex: =1
+
+        Up_Icon_11 As icon.ChevronUp:
+            Height: =35
+            Icon: =Icon.ChevronUp
+            OnSelect: =Set(visibleUsermanagementContainer,false)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =60
+            X: =45
+            Y: =41
+            ZIndex: =6
+
+    Container3 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =542
+        Width: =1440
+        Y: =214
+        ZIndex: =10
+
+        Label12_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            Y: =13
+            ZIndex: =1
+
+        Label14_2 As label:
+            Height: =34
+            Text: ="Emp.ID"
+            Width: =249.2
+            X: =30
+            Y: =13
+            ZIndex: =2
+
+        TextInput6 As text:
+            Default: =""
+            Width: =373.8
+            X: =279.2
+            Y: =10
+            ZIndex: =3
+
+        Label12_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =1
+            Y: =73
+            ZIndex: =4
+
+        Label14_3 As label:
+            Height: =34
+            Text: ="Last Name"
+            Width: =249.2
+            X: =31
+            Y: =73
+            ZIndex: =5
+
+        TextInput6_1 As text:
+            Default: ="Text input"
+            Width: =373.8
+            X: =280
+            Y: =70
+            ZIndex: =6
+
+        Label12_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =1
+            Y: =133
+            ZIndex: =7
+
+        Label14_4 As label:
+            Height: =34
+            Text: ="DOB"
+            Width: =249.2
+            X: =31
+            Y: =133
+            ZIndex: =8
+
+        Label12_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            Y: =193
+            ZIndex: =10
+
+        Label14_5 As label:
+            Height: =34
+            Text: ="Email - ID"
+            Width: =249.2
+            X: =30
+            Y: =193
+            ZIndex: =11
+
+        TextInput6_3 As text:
+            Default: =""
+            Width: =373.8
+            X: =279
+            Y: =190
+            ZIndex: =12
+
+        Label12_5 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            Y: =253
+            ZIndex: =13
+
+        Label14_6 As label:
+            Height: =34
+            Text: ="Address"
+            Width: =249.2
+            X: =30
+            Y: =253
+            ZIndex: =14
+
+        TextInput6_4 As text:
+            Default: =""
+            Width: =373.8
+            X: =279
+            Y: =250
+            ZIndex: =15
+
+        Label12_6 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            Y: =315
+            ZIndex: =16
+
+        Label14_12 As label:
+            Height: =34
+            Text: ="State"
+            Width: =249.2
+            X: =30
+            Y: =315
+            ZIndex: =17
+
+        TextInput6_5 As text:
+            Default: =""
+            Width: =373.8
+            X: =279
+            Y: =312
+            ZIndex: =18
+
+        Label12_12 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            Y: =378
+            ZIndex: =19
+
+        Label14_14 As label:
+            Height: =34
+            Text: ="User Type"
+            Width: =249.2
+            X: =30
+            Y: =378
+            ZIndex: =20
+
+        Label12_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =13
+            ZIndex: =22
+
+        Label14_7 As label:
+            Height: =34
+            Text: ="First Name"
+            Width: =249.2
+            X: =785
+            Y: =13
+            ZIndex: =23
+
+        TextInput6_7 As text:
+            Default: =""
+            Width: =373.8
+            X: =1034
+            Y: =10
+            ZIndex: =24
+
+        Label12_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =76
+            ZIndex: =25
+
+        Label14_8 As label:
+            Height: =34
+            Text: ="Shift Time"
+            Width: =249.2
+            X: =785
+            Y: =76
+            ZIndex: =26
+
+        Label12_9 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =136
+            ZIndex: =28
+
+        Label14_9 As label:
+            Height: =34
+            Text: ="Gender"
+            Width: =249.2
+            X: =785
+            Y: =136
+            ZIndex: =29
+
+        Label12_10 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =197
+            ZIndex: =31
+
+        Label14_10 As label:
+            Height: =34
+            Text: ="Mobile No"
+            Width: =249.2
+            X: =785
+            Y: =197
+            ZIndex: =32
+
+        TextInput6_10 As text:
+            Default: =""
+            Width: =373.8
+            X: =1034
+            Y: =194
+            ZIndex: =33
+
+        Label12_11 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =256
+            ZIndex: =34
+
+        Label14_11 As label:
+            Height: =34
+            Text: ="City"
+            Width: =249.2
+            X: =785
+            Y: =256
+            ZIndex: =35
+
+        TextInput6_11 As text:
+            Default: =""
+            Width: =373.8
+            X: =1034
+            Y: =253
+            ZIndex: =36
+
+        Label12_13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =318
+            ZIndex: =39
+
+        Label14_13 As label:
+            Height: =34
+            Text: ="Zip Code"
+            Width: =249.2
+            X: =785
+            Y: =318
+            ZIndex: =40
+
+        TextInput6_12 As text:
+            Default: =""
+            Width: =373.8
+            X: =1034
+            Y: =315
+            ZIndex: =41
+
+        Label12_14 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 0, 0, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =34
+            Text: ="*"
+            Width: =30
+            X: =755
+            Y: =381
+            ZIndex: =42
+
+        Label14_15 As label:
+            Height: =34
+            Text: ="Project Name"
+            Width: =249.2
+            X: =785
+            Y: =381
+            ZIndex: =43
+
+        DatePicker3 As datepicker:
+            Width: =373
+            X: =279
+            Y: =133
+            ZIndex: =45
+
+        Dropdown4_4 As dropdown:
+            Items: =["Select","Admin","Operator"]
+            Width: =372
+            X: =280
+            Y: =372
+            ZIndex: =46
+
+        Dropdown4_5 As dropdown:
+            Items: |-
+                =["Select","Claims","FRU","Membership",
+                "PFO"]
+            Width: =372
+            X: =1035
+            Y: =381
+            ZIndex: =47
+
+        Dropdown4_2 As dropdown:
+            Items: =["Male","Female"]
+            Width: =372
+            X: =1035
+            Y: =136
+            ZIndex: =48
+
+        Dropdown4_3 As dropdown:
+            Items: =["Select","Shift1 (Morning)","Shift2 (Evening)"]
+            Width: =372
+            X: =1034
+            Y: =73
+            ZIndex: =49
+
+    UserManagementContainer_8 As groupContainer.manualLayoutContainer:
+        Height: =166
+        Visible: =visibleUsermanagementContainer
+        Width: =177
+        X: =177
+        Y: =124
+        ZIndex: =11
+
+        Button2_31 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_RegistrationScreen_Controls);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Registration"
+            Width: =177
+            ZIndex: =1
+
+        Button2_32 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_ManupulationScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Manupulation"
+            Width: =177
+            Y: =40
+            ZIndex: =2
+
+        Button2_33 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_MappingScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Client Mapping"
+            Width: =177
+            Y: =83
+            ZIndex: =3
+
+        Icon3_3 As icon.ChevronUp:
+            Height: =35
+            Icon: =Icon.ChevronUp
+            OnSelect: =Set(visibleUsermanagementContainer,false)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =60
+            X: =58
+            Y: =126
+            ZIndex: =6
+

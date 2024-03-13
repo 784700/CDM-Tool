@@ -1,0 +1,21 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "ATTACHMENT_COMMENT_ID": "ATTACHMENT_COMMENT_ID",
+      "ATTACHMENT_COMMENT_NAME": "ATTACHMENT_COMMENT_NAME",
+      "CLIENT_ID": "CLIENT_ID"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "CDM_ATTACHMENT_COMMENTS",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

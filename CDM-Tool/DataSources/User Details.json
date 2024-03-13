@@ -1,0 +1,117 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr20d_tables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr20d_table",
+    "Name": "User Details",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr20d_cr79e_address": "Address",
+      "cr20d_cr79e_city": "City",
+      "cr20d_cr79e_clientname": "Clientname",
+      "cr20d_cr79e_dob": "DOB",
+      "cr20d_cr79e_emailid": "Email ID",
+      "cr20d_cr79e_empid": "Emp ID",
+      "cr20d_cr79e_firstname": "First Name",
+      "cr20d_cr79e_flowtype": "Flow Type",
+      "cr20d_cr79e_gender": "Gender",
+      "cr20d_cr79e_lastname": "Last Name",
+      "cr20d_cr79e_mobileno": "Mobile No",
+      "cr20d_cr79e_password": "Password",
+      "cr20d_cr79e_shifttime": "Shift Time",
+      "cr20d_cr79e_state": "State",
+      "cr20d_cr79e_userdetailsid": "User Details Id",
+      "cr20d_cr79e_usertype": "User Type",
+      "cr20d_cr79e_zipcode": "Zipcode",
+      "cr20d_importsequencenumber": "importsequencenumber (cr20d_importsequencenumber)",
+      "cr20d_owningbusinessunit": "owningbusinessunit (cr20d_owningbusinessunit)",
+      "cr20d_statecode": "statecode (cr20d_statecode)",
+      "cr20d_statuscode": "statuscode (cr20d_statuscode)",
+      "cr20d_table_AsyncOperations": "System Jobs",
+      "cr20d_table_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr20d_table_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr20d_table_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr20d_table_ProcessSession": "Process Sessions",
+      "cr20d_table_SyncErrors": "Sync Errors",
+      "cr20d_tableid": "Table",
+      "cr20d_timezoneruleversionnumber": "timezoneruleversionnumber (cr20d_timezoneruleversionnumber)",
+      "cr20d_utcconversiontimezonecode": "utcconversiontimezonecode (cr20d_utcconversiontimezonecode)",
+      "cr20d_versionnumber": "versionnumber (cr20d_versionnumber)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "User Details",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "User Details (Views)",
+    "Name": "_cr20d_table_views",
+    "RelatedEntityName": "User Details",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "994ef22a-4da5-41f3-91a6-c71b9b71ebe2": "User Details Lookup View",
+      "9f235d04-90b5-4e62-9d98-e9c76a58166d": "User Details Advanced Find View",
+      "a42fd333-3d7c-4856-8887-e26bbd86757f": "Active User Details",
+      "a58b913d-7799-40c7-85ef-69662d1570ff": "Inactive User Details",
+      "e15ff635-d1af-4493-b0aa-405f6cabbf9f": "User Details Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (User Details)",
+    "Name": "cr20d_table_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "User Details"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "User Details",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (User Details)",
+    "Name": "cr20d_table_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "User Details"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "User Details",
+    "Type": "OptionSetInfo"
+  }
+]

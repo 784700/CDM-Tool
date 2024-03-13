@@ -1,0 +1,24 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "57dfb1b5-7d79-4046-a4da-fd831d5befe1-KeyId": "KeyId",
+      "EMPLOYEE_ID": "EMPLOYEE_ID",
+      "FIRST_NAME": "FIRST_NAME",
+      "LAST_NAME": "LAST_NAME",
+      "MIDDLE_NAME": "MIDDLE_NAME",
+      "SL_NO": "SL_NO"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "CDM_MIS_REPORT_USER",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

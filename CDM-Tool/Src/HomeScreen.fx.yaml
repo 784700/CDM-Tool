@@ -1,0 +1,365 @@
+HomeScreen As screen:
+
+    UserLogoutContainer As groupContainer.manualLayoutContainer:
+        Height: =162
+        Visible: =VisibleUserLogoutContainer
+        Width: =212
+        X: =40
+        Y: =222
+        ZIndex: =1
+
+        LogoutButton_8 As button:
+            OnSelect: =Navigate(LoginScreen);Set(VisibleUserLogoutContainer,false);
+            Text: ="Logout"
+            X: =22
+            Y: =52
+            ZIndex: =1
+
+    HomeTABS_Container_8 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.ExtraBold
+        Fill: =RGBA(77, 77, 77, 1)
+        Height: =55
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =App.MinScreenWidth
+        Y: =120
+        ZIndex: =2
+
+        HomeButton_8 As button:
+            Fill: =RGBA(77, 77, 77, 1)
+            Font: =Font.'Lato Light'
+            Height: =50
+            OnSelect: =Navigate(HomeScreen);Set(visibleRuleBuilderContainer,false);Set(visibleUsermanagementContainer,false)
+            Text: ="Home"
+            Width: =107
+            X: =15
+            ZIndex: =1
+
+        UserManagementButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleRuleBuilderContainer,false)
+            Size: =12
+            Text: ="User Management"
+            Width: =177
+            X: =137
+            ZIndex: =2
+
+        UserManagementDownICON_8 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleRuleBuilderContainer,false)
+            Width: =15
+            X: =293
+            ZIndex: =3
+
+        TaskAllocationButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            Size: =12
+            Text: ="Task Allocation"
+            Width: =165
+            X: =332
+            ZIndex: =4
+
+        RuleBuilderButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            OnSelect: =If(visibleRuleBuilderContainer,Set(visibleRuleBuilderContainer,false),Set(visibleRuleBuilderContainer,true));Set(visibleUsermanagementContainer,false)
+            Size: =12
+            Text: ="Rule Builder"
+            Width: =148
+            X: =510
+            ZIndex: =5
+
+        UploadInventoryButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            Size: =12
+            Text: ="Upload Inventory"
+            Width: =190
+            X: =677
+            ZIndex: =6
+
+        AdminToolButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            Size: =12
+            Text: ="Admin Tool"
+            Width: =165
+            X: =882
+            ZIndex: =7
+
+        ReportButton_8 As button:
+            Align: =Align.Left
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =50
+            Size: =12
+            Text: ="Report"
+            Width: =103
+            X: =1058
+            ZIndex: =8
+
+        TaskAllocationDownICON_10 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =473
+            ZIndex: =9
+
+        RuleBuilderDownICON_11 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true));Set(visibleUsermanagementContainer,false)
+            Width: =16
+            X: =633
+            ZIndex: =10
+
+        UploadInventoryDownICON_12 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =846
+            ZIndex: =11
+
+        AdminToolDownICON_13 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =16
+            X: =1018
+            ZIndex: =12
+
+        ReportDownICON_14 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            Width: =15
+            X: =1138
+            ZIndex: =13
+
+        Rectangle1 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            ZIndex: =14
+
+        Rectangle1_1 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =279
+            X: =1161
+            ZIndex: =15
+
+        Rectangle1_2 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =122
+            ZIndex: =16
+
+        Rectangle1_3 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =317
+            ZIndex: =17
+
+        Rectangle1_4 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =495
+            ZIndex: =18
+
+        Rectangle1_5 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =662
+            ZIndex: =19
+
+        Rectangle1_6 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =867
+            ZIndex: =20
+
+        Rectangle1_7 As rectangle:
+            Fill: =RGBA(77, 77, 77, 1)
+            Height: =55
+            Width: =15
+            X: =1043
+            ZIndex: =21
+
+    LogoContainer_6 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        Width: =App.MinScreenWidth
+        Y: =40
+        ZIndex: =3
+
+        Label1_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            Size: =25
+            Text: ="Emblem Health"
+            Visible: =false
+            Width: =420
+            ZIndex: =2
+
+        Image2_10 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            Width: =App.MinScreenWidth
+            ZIndex: =3
+
+    UserLoginInfoContainer_8 As groupContainer.manualLayoutContainer:
+        Height: =45
+        Width: =1440
+        Y: =175
+        ZIndex: =4
+
+        UserNameLabel_8 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 121, 187, 1)
+            Height: =45
+            OnSelect: =If(VisibleUserLogoutContainer,Set(VisibleUserLogoutContainer,false),Set(VisibleUserLogoutContainer,true))
+            Text: ="Welcome Rajavardhan"
+            Width: =204
+            ZIndex: =2
+
+        Logout_Button As button:
+            Fill: =RGBA(0, 121, 187, 1)
+            Height: =45
+            OnSelect: =Navigate(LoginScreen)
+            Text: ="Logout"
+            X: =1280
+            ZIndex: =6
+
+    PopupUserManagementContainer As groupContainer.manualLayoutContainer:
+        Height: =160
+        Visible: =visibleUsermanagementContainer
+        Width: =177
+        X: =177
+        Y: =175
+        ZIndex: =5
+
+        UserRegistration_Button As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_RegistrationScreen_LocalFile);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Registration"
+            Width: =177
+            ZIndex: =1
+
+        UserManupulation_Button As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_ManupulationScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Manupulation"
+            Width: =177
+            Y: =40
+            ZIndex: =2
+
+        UserClientMapping_Button As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(User_MappingScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="User Client Mapping"
+            Width: =177
+            Y: =83
+            ZIndex: =3
+
+        Up_Icon As icon.ChevronUp:
+            Height: =35
+            Icon: =Icon.ChevronUp
+            OnSelect: =Set(visibleUsermanagementContainer,false)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =60
+            X: =58
+            Y: =125
+            ZIndex: =6
+
+    RuleBuilderpopupContainer As groupContainer.manualLayoutContainer:
+        Height: =75
+        Visible: =visibleRuleBuilderContainer
+        Width: =150
+        X: =550
+        Y: =175
+        ZIndex: =6
+
+        RuleBuilder_Button As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(RuleBuilderScreen);Set(visibleUsermanagementContainer,false)
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =10
+            Text: ="Rule Builder"
+            Width: =150
+            ZIndex: =1
+
+        Up_Icon_4 As icon.ChevronUp:
+            Height: =35
+            Icon: =Icon.ChevronUp
+            OnSelect: =Set(visibleUsermanagementContainer,false)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Width: =60
+            X: =45
+            Y: =41
+            ZIndex: =6
+

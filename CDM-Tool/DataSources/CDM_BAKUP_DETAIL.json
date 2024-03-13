@@ -1,0 +1,37 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sql",
+    "CdpRevision": {
+      "BaseUrl": "/v2",
+      "LastChangedTimeString": "2024-03-01T19:30:31.3980000Z",
+      "RevisionNumber": 2
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "BAKUP_DELETE_LOGIN": "BAKUP_DELETE_LOGIN",
+      "BAKUP_DELETE_TIMESTAMP": "BAKUP_DELETE_TIMESTAMP",
+      "BAKUP_FRMDT": "BAKUP_FRMDT",
+      "BAKUP_ID": "BAKUP_ID",
+      "BAKUP_INSERT_LOGIN": "BAKUP_INSERT_LOGIN",
+      "BAKUP_INSERT_TIMESTAMP": "BAKUP_INSERT_TIMESTAMP",
+      "BAKUP_RESTORE_LOGIN": "BAKUP_RESTORE_LOGIN",
+      "BAKUP_RESTORE_TIMESTAMP": "BAKUP_RESTORE_TIMESTAMP",
+      "BAKUP_TODT": "BAKUP_TODT",
+      "CLAIM_COUNT": "CLAIM_COUNT",
+      "CLIENT_ID": "CLIENT_ID",
+      "EXTRA_FIELD_1": "EXTRA_FIELD_1",
+      "EXTRA_FIELD_2": "EXTRA_FIELD_2",
+      "EXTRA_FIELD_3": "EXTRA_FIELD_3",
+      "EXTRA_FIELD_4": "EXTRA_FIELD_4",
+      "EXTRA_FIELD_5": "EXTRA_FIELD_5",
+      "FILENAME": "FILENAME",
+      "IS_DELETED": "IS_DELETED",
+      "IS_RESTORED": "IS_RESTORED"
+    },
+    "DatasetName": "LTIN399896%5cSQLEXPRESS,CDM_INT",
+    "EncodeDataset": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "CDM_BAKUP_DETAIL",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

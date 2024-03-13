@@ -1,0 +1,57 @@
+App As appinfo:
+    BackEnabled: =true
+    MinScreenHeight: =900
+    MinScreenWidth: =1440
+    OnStart: |-
+        = ClearCollect(col_ClientName,
+             {ID:1,ClientName:""},
+            {ID:1,ClientName:"Claims"},
+            {ID:1,ClientName:"Membership"},
+            {ID:1,ClientName:"PFO"},
+            {ID:1,ClientName:"FRU"}
+            );
+        
+             ClearCollect(col_ShiftTimings,
+            {ID:1,ShiftTimings:""},
+            {ID:1,ShiftTimings:"All"},
+            {ID:1,ShiftTimings:"Shift1(Morning)"},
+            {ID:1,ShiftTimings:"Shift1(Evening)"},
+            {ID:1,ShiftTimings:"Shift3(Night)"}
+            );
+        
+             ClearCollect(col_UserAvailability,
+            {ID:1,UserAvailability:""},
+            {ID:1,UserAvailability:"All"},
+            {ID:1,UserAvailability:"Available"},
+            {ID:1,UserAvailability:"NotAvailable"},
+            {ID:1,UserAvailability:"Leave"}
+            );
+        
+             ClearCollect(col_Radio,
+            {ID:1,UserAvailability:"Allocate"},
+            {ID:1,UserAvailability:"De-Allocate"}
+                );
+        
+                 ClearCollect(col_Report,
+            {ID:1,Report:""},
+            {ID:1,Report:"Query Report"},
+            {ID:1,Report:"Allocation Report"},
+            {ID:1,Report:"Overall Report"},
+            {ID:1,Report:"Assigned claims Report"},
+            {ID:1,Report:"UnAssigned claims Report"},
+            {ID:1,Report:"Aside claims Report"}
+                );
+        
+           Reset(Checkbox1)
+        
+               
+    StartScreen: =
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

@@ -1,0 +1,206 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr20d_newtables",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr20d_newtable",
+    "Name": "User Registrations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr20d_address": "Address",
+      "cr20d_city": "City",
+      "cr20d_clientname": "Client Name",
+      "cr20d_dob": "DOB",
+      "cr20d_emailid": "Email-ID",
+      "cr20d_empid": "Emp ID",
+      "cr20d_firstname": "First Name",
+      "cr20d_flowtype": "Flow Type",
+      "cr20d_gender": "Gender",
+      "cr20d_lastname": "Last Name",
+      "cr20d_mobileno": "Mobile No",
+      "cr20d_newtable_AsyncOperations": "System Jobs",
+      "cr20d_newtable_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr20d_newtable_DuplicateBaseRecord": "Duplicate Records (cr20d_newtable_DuplicateBaseRecord)",
+      "cr20d_newtable_DuplicateMatchingRecord": "Duplicate Records (cr20d_newtable_DuplicateMatchingRecord)",
+      "cr20d_newtable_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr20d_newtable_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr20d_newtable_ProcessSession": "Process Sessions",
+      "cr20d_newtable_SyncErrors": "Sync Errors",
+      "cr20d_newtableid": "New table",
+      "cr20d_shifttime": "Shift Time",
+      "cr20d_state": "State",
+      "cr20d_usertype": "User Type",
+      "cr20d_zipcode": "Zip Code",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "User Registrations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "User Registrations (Views)",
+    "Name": "_cr20d_newtable_views",
+    "RelatedEntityName": "User Registrations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1f484b1c-04b0-43fa-9ca3-ef09e932a337": "User Registration Associated View",
+      "63d272b5-6687-4cd6-b8f7-73876a8e8e38": "Active User Registrations",
+      "80adaff0-286e-4518-801e-22965007fc7e": "Inactive User Registrations",
+      "96e9f949-959b-4bd4-a102-88732a276114": "User Registration Advanced Find View",
+      "fa292ff5-35fe-4020-af53-c5d6cce59ff6": "User Registration Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Client Name (User Registrations)",
+    "Name": "cr20d_newtable_cr20d_clientname",
+    "OptionSetInfoNameMapping": {
+      "745290000": "CWHP"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr20d_clientname",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr20d_clientname",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Flow Type (User Registrations)",
+    "Name": "cr20d_newtable_cr20d_flowtype",
+    "OptionSetInfoNameMapping": {
+      "745290000": "QicLink"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr20d_flowtype",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "MultiSelectPicklistType",
+    "RelatedColumnInvariantName": "cr20d_flowtype",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Gender (User Registrations)",
+    "Name": "cr20d_newtable_cr20d_gender",
+    "OptionSetInfoNameMapping": {
+      "0": "Male",
+      "1": "Female"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr20d_gender",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr20d_gender",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Shift Time (User Registrations)",
+    "Name": "cr20d_newtable_cr20d_shifttime",
+    "OptionSetInfoNameMapping": {
+      "745290000": "Shift I(Morning)"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr20d_shifttime",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "MultiSelectPicklistType",
+    "RelatedColumnInvariantName": "cr20d_shifttime",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "User Type (User Registrations)",
+    "Name": "cr20d_newtable_cr20d_usertype",
+    "OptionSetInfoNameMapping": {
+      "745290000": "ADMINISTRATOR"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr20d_usertype",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr20d_usertype",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (User Registrations)",
+    "Name": "cr20d_newtable_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (User Registrations)",
+    "Name": "cr20d_newtable_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "User Registrations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "User Registrations",
+    "Type": "OptionSetInfo"
+  }
+]

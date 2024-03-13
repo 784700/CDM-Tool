@@ -1,0 +1,28 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2023-11-07T18:39:20.7270000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "__PowerAppsId__": "Row id",
+      "Assigned_x0020_Claim(s)": "Assigned Claim(s)",
+      "De_x0020_allocate_x0020_Claims": "De allocate Claims",
+      "Login_x0020_ID": "Login ID",
+      "Name": "Name",
+      "Processed_x0020_Claim(s)": "Processed Claim(s)",
+      "Queried_x0020_Claim(s)": "Queried Claim(s)",
+      "Routed_x0020_Claim(s)": "Routed Claim(s)",
+      "Set_x0020_Aside_x0020_Claim(s)": "Set Aside Claim(s)",
+      "Shift_x0020_Timings": "Shift Timings"
+    },
+    "DatasetName": "b!FZ7Sq-5FrU65apTmI9NfBRa18T5LfFBEmibXRnFIPfY41oehmZZlTb4LngpBoPCh.01TO4IBB7KY2WEMPRDBZEKIWOXNS4237I5",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Table1",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

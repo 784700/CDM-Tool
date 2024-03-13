@@ -1,0 +1,480 @@
+MainScreen As screen:
+
+    LogoContainer As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =80
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =Parent.Width
+        Y: =40
+        ZIndex: =1
+
+        Label1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(109, 49, 162, 1)
+            Font: =Font.Georgia
+            FontWeight: =FontWeight.Semibold
+            Height: =80
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =20.75
+            Text: ="Emblem Health"
+            Visible: =false
+            Width: =348.50
+            X: =0.00
+            ZIndex: =2
+
+        Image2 As image:
+            Height: =80
+            Image: =CDMEmblemPic
+            ImagePosition: =ImagePosition.Fill
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =Parent.Width
+            X: =0.00
+            ZIndex: =3
+
+    HomeTABS_Container As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.ExtraBold
+        Fill: =RGBA(77, 77, 77, 1)
+        Height: =55
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =1366
+        Y: =120
+        ZIndex: =2
+
+        HomeButton As button:
+            Fill: =HomeTABS_Container.Fill
+            Font: =Font.'Lato Light'
+            Height: =53
+            OnSelect: =//Navigate(HomeScreen)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =12.44
+            Text: ="Home"
+            Width: =88.79
+            X: =55.60
+            ZIndex: =1
+
+        UserManagementButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =55
+            OnSelect: =Set(visibleTaskAllocationContainer,false);Set(visibleReports,false);If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="User Management"
+            Width: =146.87
+            X: =197.48
+            ZIndex: =2
+
+        UserManagementDownICON As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =Set(visibleTaskAllocationContainer,false);Set(visibleReports,false);If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =320.29
+            ZIndex: =3
+
+        TaskAllocationButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =55
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleReports,false);If(visibleTaskAllocationContainer,Set(visibleTaskAllocationContainer,false),Set(visibleTaskAllocationContainer,true));
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Task Allocation"
+            Width: =134.42
+            X: =371.74
+            ZIndex: =4
+
+        RuleBuilderButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =55
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Rule Builder"
+            Width: =110.36
+            X: =533.54
+            ZIndex: =5
+
+        UploadInventoryButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =55
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Upload Inventory"
+            Width: =153.51
+            X: =674.60
+            ZIndex: =6
+
+        AdminToolButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =55
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Admin Tool"
+            Width: =125.30
+            X: =843.87
+            ZIndex: =7
+
+        ReportButton As button:
+            Align: =Align.Left
+            Fill: =HomeTABS_Container.Fill
+            Height: =53
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleTaskAllocationContainer,false);If(visibleReports,Set(visibleReports,false),Set(visibleReports,true));
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =9.96
+            Text: ="Report"
+            Width: =103
+            X: =995
+            ZIndex: =8
+
+        TaskAllocationDownICON_2 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleReports,false);If(visibleTaskAllocationContainer,Set(visibleTaskAllocationContainer,false),Set(visibleTaskAllocationContainer,true));
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =487.90
+            ZIndex: =9
+
+        RuleBuilderDownICON_3 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =624.81
+            ZIndex: =10
+
+        UploadInventoryDownICON_4 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =794.92
+            ZIndex: =11
+
+        AdminToolDownICON_5 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =If(visibleUsermanagementContainer,Set(visibleUsermanagementContainer,false),Set(visibleUsermanagementContainer,true))
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =930.99
+            ZIndex: =12
+
+        ReportDownICON_6 As icon.ChevronDown:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =Icon.ChevronDown
+            OnSelect: =Set(visibleUsermanagementContainer,false);Set(visibleTaskAllocationContainer,false);If(visibleReports,Set(visibleReports,false),Set(visibleReports,true));
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =12.44
+            X: =1068
+            ZIndex: =13
+
+    UserLoginInfoContainer As groupContainer.manualLayoutContainer:
+        Height: =45
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =1366
+        Y: =175
+        ZIndex: =3
+
+        UserNameLabel As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(102, 182, 227, 1)
+            Height: =45
+            OnSelect: =If(VisibleUserLogoutContainer,Set(VisibleUserLogoutContainer,false),Set(VisibleUserLogoutContainer,true))
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =10.79
+            Text: |-
+                ="Welcome : Hussain"
+            Width: =214.08
+            X: =0.00
+            ZIndex: =2
+
+        ProjectType As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 13, 75, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            Live: =Live.Assertive
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =16.59
+            Text: =""
+            Width: =797.41
+            X: =175.91
+            ZIndex: =3
+
+        Timer1 As timer:
+            AutoStart: =true
+            Duration: =1000
+            OnTimerEnd: =Set(TimeinSec,Now())
+            OnTimerStart: =Set(TimeinSec,Now())
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Repeat: =true
+            Size: =10.79
+            Visible: =false
+            Width: =132.77
+            X: =33.19
+            Y: =5
+            ZIndex: =4
+
+        LogoutButton As button:
+            OnSelect: =/*Navigate(LoginScreen);*/Set(VisibleUserLogoutContainer,false);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            Size: =12.44
+            Text: ="Logout"
+            Width: =132.77
+            X: =1234
+            ZIndex: =6
+
+    UserManagementContainer As groupContainer.manualLayoutContainer:
+        Height: =135
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleUsermanagementContainer
+        Width: =146.87
+        X: =234.99
+        Y: =175
+        ZIndex: =4
+
+        Button2 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Registration"
+            Width: =146.87
+            X: =0.00
+            ZIndex: =1
+
+        Button2_1 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Manupulation"
+            Width: =146.87
+            X: =0.00
+            Y: =40
+            ZIndex: =2
+
+        Button2_2 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="User Client Mapping"
+            Width: =146.87
+            X: =0.00
+            Y: =83
+            ZIndex: =3
+
+    TaskAllocation As groupContainer.manualLayoutContainer:
+        Height: =209
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleTaskAllocationContainer
+        Width: =146.87
+        X: =405
+        Y: =175
+        ZIndex: =5
+
+        Button2_6 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Details"
+            Width: =146.87
+            X: =0.00
+            ZIndex: =1
+
+        Button2_7 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Manual Task Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =40
+            ZIndex: =2
+
+        Button2_8 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Bin Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =83
+            ZIndex: =3
+
+        Button2_9 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Age Range Allocation"
+            Width: =146.87
+            X: =0.00
+            Y: =126
+            ZIndex: =4
+
+        Button2_10 As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(TaskAllocationScreen);Set(visibleTaskAllocationContainer,false);Reset(Checkbox1);Reset(Checkbox2);Reset(Checkbox4);Reset(Dropdown1);Reset(ShiftTimingDropDown);Reset(ShiftTimingDropDown_1);Reset(Dropdown3);Reset(TextInput3);Reset(TextInput3_1);Reset(Dropdown2)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Claim Assignment Rule"
+            Width: =146.87
+            X: =0.00
+            Y: =169
+            ZIndex: =5
+
+    Report As groupContainer.manualLayoutContainer:
+        Height: =83
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Visible: =visibleReports
+        Width: =96.25
+        X: =1031.5700000000002
+        Y: =175
+        ZIndex: =6
+
+        Charts As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(ReportScreen);Set(visibleReports,false);Reset(Dropdown4);Reset(Dropdown4_1);Set(Varexcelexport,false)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Charts"
+            Width: =96.25
+            X: =0.00
+            Y: =40
+            ZIndex: =1
+
+        Reports As button:
+            Color: =RGBA(0, 94, 146, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =43
+            HoverFill: =ColorFade(RGBA(77, 77, 77, 1), -20%)
+            OnSelect: =Navigate(ReportScreen);Set(visibleReports,false);Reset(Dropdown4);Reset(Dropdown4_1);Set(Varexcelexport,false)
+            PaddingRight: =4.15
+            PaddingTop: =4.15
+            RadiusBottomLeft: =12
+            RadiusBottomRight: =12
+            RadiusTopLeft: =12
+            RadiusTopRight: =12
+            Size: =8.30
+            Text: ="Reports"
+            Width: =96.25
+            X: =0.00
+            ZIndex: =3
+
