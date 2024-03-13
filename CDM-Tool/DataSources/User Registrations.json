@@ -6,6 +6,7 @@
     "IsSampleData": false,
     "IsWritable": true,
     "LogicalName": "cr20d_newtable",
+    "MaxGetRowsCount": 500,
     "Name": "User Registrations",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
